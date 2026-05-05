@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+
+<!-- SEO -->
+<title>ANP Privado, Baner — An Abode of Privacy | 3 & 4 BHK from ₹2.65 Cr*</title>
+<meta name="description" content="ANP Privado, Baner. 10 acres. 9 towers. 3 & 4 BHK luxury residences from ₹2.65 Cr*. RERA: PR1260002500840. Show flat ready. Schedule a private site visit." />
+<meta name="keywords" content="ANP Privado, Baner Pune, 3BHK Baner, 4BHK Baner, luxury apartments Pune, Pan Card Club Road" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ANP Privado, Baner — An Abode of Privacy" />
+<meta property="og:description" content="3 & 4 BHK luxury residences. 10 acres. 9 towers. From ₹2.65 Cr*. Show flat ready." />
+<meta property="og:image" content="https://example.com/og-privado.jpg" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+/* ===========================================
+   ANP PRIVADO — DESIGN TOKENS
+   =========================================== */
+:root {
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #1a1a1a;
+  --color-cream: #f5f1ea;
+  --color-cream-deep: #ebe5da;
+  --color-bone: #faf7f2;
+  --color-stone: #8a847a;
+  --color-stone-light: #b8b1a4;
+  --color-gold: #c9a96e;
+  --color-gold-deep: #a88654;
+  --color-rust: #8b3a1f;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #128c7e;
+
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-body: 'Manrope', -apple-system, sans-serif;
+
+  --ease-luxury: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --max-width: 1440px;
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+}
+
+/* ===========================================
+   RESET + BASE
+   =========================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { max-width: 100%; display: block; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* Selection */
+::selection { background: var(--color-ink); color: var(--color-cream); }
+
+/* ===========================================
+   TYPOGRAPHY
+   =========================================== */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  display: inline-block;
+}
+
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 9vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.display-sm {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.italic { font-style: italic; font-weight: 300; }
+
+.body-lg { font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.6; }
+.body-sm { font-size: 0.85rem; line-height: 1.55; color: var(--color-stone); }
+
+/* ===========================================
+   LAYOUT
+   =========================================== */
+.container { max-width: var(--max-width); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.section { padding-top: clamp(5rem, 10vw, 9rem); padding-bottom: clamp(5rem, 10vw, 9rem); }
+
+/* ===========================================
+   STICKY NAV
+   =========================================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--gutter);
+  display: flex; justify-content: space-between; align-items: center;
+  transition: all 0.5s var(--ease-luxury);
+  background: rgba(250, 247, 242, 0);
+}
+.nav.scrolled {
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+  padding-top: 0.85rem; padding-bottom: 0.85rem;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  transition: color 0.4s;
+}
+.nav.hero-mode .nav-brand { color: var(--color-cream); }
+.nav.hero-mode .nav-cta { color: var(--color-cream); border-color: rgba(245, 241, 234, 0.3); }
+.nav.hero-mode .nav-cta:hover { background: var(--color-cream); color: var(--color-ink); }
+
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid rgba(10, 10, 10, 0.2);
+  border-radius: 999px;
+  font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-ink);
+  transition: all 0.4s var(--ease-luxury);
+}
+.nav-cta:hover { background: var(--color-ink); color: var(--color-cream); border-color: var(--color-ink); }
+.nav-cta svg { width: 14px; height: 14px; }
+
+/* ===========================================
+   HERO
+   =========================================== */
+.hero {
+  position: relative;
+  min-height: 100vh; min-height: 100svh;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute; inset: 0;
+  z-index: 1;
+}
+
+/* IMAGE REFERENCE: ANP_Privado_M_Brochure_V2.pdf — Page 1 hero shot. 
+   Cinematic exterior render of the 9-tower complex at twilight,
+   Pashan Hill backdrop, warm interior lights, dramatic sky. */
+.hero-media::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.85) 100%),
+    radial-gradient(ellipse at 30% 40%, #2a1a14 0%, #0a0a0a 70%);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Subtle architectural lines overlay */
+.hero-media::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, transparent 49.9%, rgba(201, 169, 110, 0.08) 50%, transparent 50.1%),
+    linear-gradient(180deg, transparent 49.9%, rgba(201, 169, 110, 0.04) 50%, transparent 50.1%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  flex: 1;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 8rem var(--gutter) clamp(3rem, 6vw, 5rem);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-meta {
+  display: flex; gap: 2rem; align-items: center;
+  margin-bottom: 2.5rem;
+  opacity: 0; transform: translateY(20px);
+  animation: fadeUp 1.2s var(--ease-out-expo) 0.3s forwards;
+}
+.hero-meta .eyebrow { color: var(--color-gold); }
+.hero-meta-divider { width: 30px; height: 1px; background: rgba(245, 241, 234, 0.3); }
+
+.hero-headline {
+  margin-bottom: 1.5rem;
+  max-width: 1100px;
+}
+.hero-headline-line {
+  display: block;
+  overflow: hidden;
+}
+.hero-headline-line span {
+  display: inline-block;
+  transform: translateY(110%);
+  animation: heroLineUp 1.4s var(--ease-out-expo) forwards;
+}
+.hero-headline-line:nth-child(1) span { animation-delay: 0.5s; }
+.hero-headline-line:nth-child(2) span { animation-delay: 0.7s; }
+.hero-headline-line:nth-child(3) span { animation-delay: 0.9s; font-style: italic; color: var(--color-gold); }
+
+.hero-sub {
+  max-width: 540px;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.5;
+  color: rgba(245, 241, 234, 0.75);
+  margin-bottom: 3rem;
+  opacity: 0; transform: translateY(20px);
+  animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+}
+
+.hero-actions {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  align-items: center;
+  opacity: 0; transform: translateY(20px);
+  animation: fadeUp 1s var(--ease-out-expo) 1.6s forwards;
+}
+
+.hero-stats {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(3rem, 6vw, 5rem);
+  z-index: 2;
+  display: flex; gap: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 1s var(--ease-out-expo) 1.8s forwards;
+}
+.hero-stat-item .stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  font-weight: 300;
+  color: var(--color-cream);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.hero-stat-item .stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 234, 0.6);
+}
+
+@media (max-width: 768px) {
+  .hero-stats { display: none; }
+  .hero-meta { flex-wrap: wrap; gap: 1rem; }
+  .hero-meta-divider { display: none; }
+}
+
+/* ===========================================
+   BUTTONS
+   =========================================== */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.65rem;
+  padding: 1.05rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: all 0.4s var(--ease-luxury);
+  position: relative;
+  overflow: hidden;
+}
+.btn svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease-luxury); }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn-primary {
+  background: var(--color-whatsapp);
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+}
+.btn-primary:hover {
+  background: var(--color-whatsapp-dark);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(245, 241, 234, 0.3);
+  color: var(--color-cream);
+}
+.btn-ghost:hover { background: var(--color-cream); color: var(--color-ink); border-color: var(--color-cream); }
+
+.btn-dark {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+.btn-dark:hover { background: var(--color-ink-soft); transform: translateY(-2px); }
+
+.btn-outline-dark {
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+}
+.btn-outline-dark:hover { background: var(--color-ink); color: var(--color-cream); }
+
+/* ===========================================
+   FLOATING WHATSAPP
+   =========================================== */
+.float-whatsapp {
+  position: fixed;
+  right: 1.5rem; bottom: 1.5rem;
+  z-index: 90;
+  width: 64px; height: 64px;
+  background: var(--color-whatsapp);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  transition: all 0.4s var(--ease-luxury);
+  animation: pulse 2s infinite;
+}
+.float-whatsapp:hover { transform: scale(1.1); animation: none; }
+.float-whatsapp svg { width: 30px; height: 30px; fill: white; }
+.float-whatsapp::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--color-whatsapp);
+  opacity: 0;
+  animation: ping 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7), 0 0 0 8px rgba(37, 211, 102, 0.1); }
+}
+@keyframes ping {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroLineUp {
+  to { transform: translateY(0); }
+}
+
+/* Reveal: starts hidden only if JS is active. Fallback: visible by default. */
+.js-enabled .reveal { opacity: 0; transform: translateY(40px); transition: all 1s var(--ease-out-expo); }
+.js-enabled .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+/* ===========================================
+   TRUST STRIP
+   =========================================== */
+.trust-strip {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 1.5rem var(--gutter);
+  border-bottom: 1px solid rgba(245, 241, 234, 0.08);
+}
+.trust-strip-inner {
+  max-width: var(--max-width); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1.5rem;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: rgba(245, 241, 234, 0.7);
+}
+.trust-item strong { color: var(--color-cream); font-weight: 500; }
+.trust-divider { width: 1px; height: 14px; background: rgba(245, 241, 234, 0.15); }
+@media (max-width: 768px) {
+  .trust-divider { display: none; }
+  .trust-strip-inner { justify-content: center; }
+}
+
+/* ===========================================
+   STORY / POSITIONING
+   =========================================== */
+.story {
+  background: var(--color-bone);
+  position: relative;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .story-grid { grid-template-columns: 1fr; }
+}
+
+.story-text { max-width: 540px; }
+.story-text .display-lg { margin: 1.5rem 0 2rem; }
+.story-text .body-lg { color: var(--color-stone); margin-bottom: 1.5rem; }
+
+.story-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--color-cream-deep);
+  overflow: hidden;
+}
+/* IMAGE REFERENCE: Brochure page 1 — woman standing in flowing white dress
+   in serene natural setting. Conveys "privacy, peace, sanctuary".
+   Replace .story-visual::before with this image. */
+.story-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(245, 241, 234, 0.2) 0%, rgba(184, 177, 164, 0.4) 100%),
+    repeating-linear-gradient(45deg, transparent 0, transparent 20px, rgba(138, 132, 122, 0.05) 20px, rgba(138, 132, 122, 0.05) 21px);
+}
+.story-visual-caption {
+  position: absolute;
+  bottom: 2rem; left: 2rem; right: 2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  color: var(--color-ink);
+  line-height: 1.4;
+  z-index: 2;
+}
+
+/* ===========================================
+   STATS BANNER
+   =========================================== */
+.stats-banner {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: clamp(4rem, 7vw, 6rem) var(--gutter);
+}
+.stats-banner-inner {
+  max-width: var(--max-width); margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .stats-banner-inner { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
+}
+.stat-block { text-align: left; }
+.stat-block .stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+}
+.stat-block .stat-num .unit {
+  font-size: 0.4em; vertical-align: super;
+  color: var(--color-gold); margin-left: 0.2rem;
+}
+.stat-block .stat-desc {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-stone-light);
+  line-height: 1.5;
+}
+
+/* ===========================================
+   LOCATION
+   =========================================== */
+.location {
+  background: var(--color-cream);
+}
+.location-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+@media (max-width: 768px) {
+  .location-header { grid-template-columns: 1fr; }
+}
+.location-header-right { color: var(--color-stone); }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--color-cream-deep);
+  border-top: 1px solid var(--color-cream-deep);
+  border-left: 1px solid var(--color-cream-deep);
+}
+@media (max-width: 900px) { .location-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.location-cell {
+  background: var(--color-cream);
+  padding: 2rem 1.5rem;
+  transition: all 0.5s var(--ease-luxury);
+}
+.location-cell:hover { background: var(--color-bone); }
+.location-cell-cat {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.location-cell-list {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 0.65rem;
+}
+.location-cell-list li {
+  display: flex; justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  border-bottom: 1px dotted var(--color-cream-deep);
+  padding-bottom: 0.5rem;
+}
+.location-cell-list .time {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-stone);
+  font-size: 0.85rem;
+}
+
+/* ===========================================
+   AMENITIES
+   =========================================== */
+.amenities {
+  background: var(--color-bone);
+}
+.amenities-intro {
+  max-width: 700px; margin: 0 auto 5rem;
+  text-align: center;
+}
+.amenities-intro .display-lg { margin: 1rem 0 1.5rem; }
+.amenities-intro .body-lg { color: var(--color-stone); }
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-cream-deep);
+  border: 1px solid var(--color-cream-deep);
+}
+@media (max-width: 900px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .amenities-grid { grid-template-columns: 1fr; } }
+
+.amenity-card {
+  background: var(--color-bone);
+  padding: 2.5rem 2rem;
+  transition: all 0.5s var(--ease-luxury);
+  display: flex; flex-direction: column;
+  gap: 1rem;
+}
+.amenity-card:hover {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+.amenity-card:hover .amenity-icon { color: var(--color-gold); }
+.amenity-card:hover .amenity-list { color: rgba(245, 241, 234, 0.65); }
+.amenity-card:hover .amenity-title { color: var(--color-cream); }
+
+.amenity-icon {
+  width: 36px; height: 36px;
+  color: var(--color-ink);
+  transition: color 0.5s;
+}
+.amenity-icon svg { width: 100%; height: 100%; stroke-width: 1; }
+
+.amenity-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-ink);
+  transition: color 0.5s;
+}
+.amenity-list {
+  font-size: 0.85rem;
+  color: var(--color-stone);
+  line-height: 1.7;
+  transition: color 0.5s;
+}
+
+/* ===========================================
+   CINEMATIC CTA SECTION
+   =========================================== */
+.cta-cinematic {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+.cta-cinematic::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(201, 169, 110, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(139, 58, 31, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+.cta-cinematic-inner {
+  position: relative; z-index: 2;
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+  padding-left: var(--gutter); padding-right: var(--gutter);
+}
+.cta-cinematic .eyebrow { color: var(--color-gold); }
+.cta-cinematic .display-lg { margin: 1.5rem 0 2rem; }
+.cta-cinematic .body-lg { color: rgba(245, 241, 234, 0.7); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* ===========================================
+   FLOOR PLAN SECTION
+   =========================================== */
+.floorplans {
+  background: var(--color-bone);
+}
+.floorplans-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+@media (max-width: 768px) { .floorplans-header { grid-template-columns: 1fr; } }
+.floorplans-header-right { color: var(--color-stone); font-size: 0.95rem; line-height: 1.6; }
+
+.floorplans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 900px) { .floorplans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+.fp-card {
+  background: white;
+  border: 1px solid var(--color-cream-deep);
+  overflow: hidden;
+  transition: all 0.5s var(--ease-luxury);
+  position: relative;
+}
+.fp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(10, 10, 10, 0.08);
+}
+.fp-card-visual {
+  position: relative;
+  aspect-ratio: 1/1;
+  background: var(--color-cream);
+  overflow: hidden;
+}
+/* Floor plan render placeholder — blurred for paid plans */
+.fp-card-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, #faf7f2 0%, #ebe5da 100%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 30px, rgba(138, 132, 122, 0.08) 30px, rgba(138, 132, 122, 0.08) 31px),
+    repeating-linear-gradient(90deg, transparent 0, transparent 30px, rgba(138, 132, 122, 0.08) 30px, rgba(138, 132, 122, 0.08) 31px);
+  background-blend-mode: multiply;
+}
+.fp-card.locked .fp-card-visual::before { filter: blur(14px); transform: scale(1.1); }
+.fp-card.locked .fp-card-visual::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(10, 10, 10, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.fp-locked-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  z-index: 3;
+  color: var(--color-cream);
+  text-align: center;
+  padding: 2rem;
+}
+.fp-locked-overlay svg { width: 32px; height: 32px; margin-bottom: 1rem; opacity: 0.9; }
+.fp-locked-overlay .lock-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.fp-card-body {
+  padding: 1.75rem;
+  border-top: 1px solid var(--color-cream-deep);
+}
+.fp-card-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.fp-card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.fp-card-meta {
+  font-size: 0.85rem;
+  color: var(--color-stone);
+  margin-bottom: 1.25rem;
+  display: flex; gap: 1rem; align-items: center;
+}
+.fp-card-meta strong { color: var(--color-ink); font-weight: 500; }
+
+.fp-unlock-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: all 0.4s var(--ease-luxury);
+  font-weight: 500;
+}
+.fp-unlock-btn:hover { background: var(--color-whatsapp); }
+.fp-unlock-btn svg { width: 14px; height: 14px; }
+
+/* ===========================================
+   PRICING TEASER
+   =========================================== */
+.pricing {
+  background: var(--color-cream);
+  position: relative;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+@media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+.pricing-card {
+  background: var(--color-bone);
+  border: 1px solid var(--color-cream-deep);
+  padding: 3rem 2.5rem;
+  position: relative;
+  transition: all 0.5s var(--ease-luxury);
+}
+.pricing-card:hover {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border-color: var(--color-ink);
+}
+.pricing-card:hover .price-currency { color: var(--color-gold); }
+.pricing-card:hover .price-meta { color: rgba(245, 241, 234, 0.6); }
+.pricing-card:hover .pricing-features { color: rgba(245, 241, 234, 0.75); }
+.pricing-card:hover .pricing-features li::before { background: var(--color-gold); }
+.pricing-card:hover .pricing-card-tag { color: var(--color-gold); }
+
+.pricing-card-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: color 0.5s;
+}
+.pricing-card-config {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+.pricing-card-area {
+  color: var(--color-stone);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.price-display {
+  margin-bottom: 2rem;
+}
+.price-from {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1;
+  display: flex; align-items: baseline; gap: 0.3rem;
+}
+.price-currency {
+  font-size: 0.5em; color: var(--color-gold-deep); font-weight: 400;
+  transition: color 0.5s;
+}
+.price-meta {
+  font-size: 0.75rem;
+  color: var(--color-stone);
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+.pricing-features {
+  list-style: none;
+  padding: 0; margin: 0 0 2rem;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  transition: color 0.5s;
+}
+.pricing-features li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(138, 132, 122, 0.15);
+  position: relative;
+  padding-left: 1.5rem;
+}
+.pricing-features li::before {
+  content: '';
+  position: absolute; left: 0; top: 1rem;
+  width: 6px; height: 1px;
+  background: var(--color-gold-deep);
+  transition: background 0.5s;
+}
+.pricing-features li:last-child { border-bottom: none; }
+
+/* ===========================================
+   PROCESS / TIMELINE
+   =========================================== */
+.process {
+  background: var(--color-bone);
+}
+.process-intro {
+  max-width: 700px;
+  margin-bottom: 5rem;
+}
+.process-intro .display-lg { margin: 1rem 0 1.5rem; }
+.process-intro .body-lg { color: var(--color-stone); }
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+@media (max-width: 768px) { .process-steps { grid-template-columns: 1fr; } }
+
+.process-step {
+  position: relative;
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--color-ink);
+}
+.process-step-num {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+.process-step-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.process-step-desc {
+  color: var(--color-stone);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ===========================================
+   FINAL CTA
+   =========================================== */
+.final-cta {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: clamp(6rem, 12vw, 12rem) var(--gutter);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 50%, rgba(201, 169, 110, 0.12) 0%, transparent 60%);
+}
+.final-cta-inner {
+  position: relative; z-index: 2;
+  max-width: 800px; margin: 0 auto;
+}
+.final-cta .display-xl { margin: 1.5rem 0 2rem; }
+.final-cta .display-xl .italic { color: var(--color-gold); }
+.final-cta .body-lg { color: rgba(245, 241, 234, 0.65); margin-bottom: 3rem; }
+.final-cta-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.final-cta-fineprint {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: rgba(245, 241, 234, 0.4);
+  letter-spacing: 0.05em;
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+.footer {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 3rem var(--gutter) 2rem;
+  border-top: 1px solid rgba(245, 241, 234, 0.08);
+}
+.footer-inner {
+  max-width: var(--max-width); margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } }
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 400;
+  margin-bottom: 1rem;
+}
+.footer-tag {
+  font-style: italic; font-family: var(--font-display);
+  color: var(--color-stone-light); font-size: 1rem;
+  margin-bottom: 1.5rem; max-width: 400px;
+}
+.footer-rera {
+  font-size: 0.75rem;
+  color: rgba(245, 241, 234, 0.5);
+  letter-spacing: 0.05em;
+}
+.footer h5 {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.footer ul { list-style: none; padding: 0; }
+.footer ul li { padding: 0.4rem 0; font-size: 0.88rem; color: rgba(245, 241, 234, 0.7); }
+.footer ul li a:hover { color: var(--color-cream); }
+
+.footer-bottom {
+  max-width: var(--max-width); margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(245, 241, 234, 0.08);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  font-size: 0.78rem;
+  color: rgba(245, 241, 234, 0.4);
+}
+
+/* ===========================================
+   UTILITY
+   =========================================== */
+.gold { color: var(--color-gold); }
+.italic-display { font-family: var(--font-display); font-style: italic; font-weight: 300; }
+
+</style>
+</head>
+<body>
+
+<!-- ================================================
+     STICKY NAV
+     ================================================ -->
+<nav class="nav hero-mode" id="nav">
+  <a href="#" class="nav-brand">Privado<span style="color: var(--color-gold);">.</span></a>
+  <a href="https://wa.me/918857090799?text=Hi%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20ANP%20Privado%2C%20Baner" 
+     target="_blank" rel="noopener" class="nav-cta">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- ================================================
+     HERO — FULLSCREEN CINEMATIC
+     ================================================ -->
+<section class="hero">
+  <div class="hero-media">
+    <!-- 
+      IMAGE REFERENCE (replace ::before background with this):
+      Source: ANP_Privado_M_Brochure_V2.pdf — Page 1 (Hero spread)
+      Description: Cinematic exterior render of all 9 towers at golden hour / twilight,
+      Pashan Hill backdrop visible behind, warm interior lighting glowing from windows,
+      dramatic sky with soft cloud gradient. Shot from ground level looking up to convey scale.
+      Recommended file: assets/hero-towers-twilight.jpg (3840x2160 minimum)
+    -->
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-meta">
+      <span class="eyebrow gold">An Abode of Privacy</span>
+      <span class="hero-meta-divider"></span>
+      <span class="eyebrow">Baner · Pune</span>
+      <span class="hero-meta-divider"></span>
+      <span class="eyebrow">RERA · PR1260002500840</span>
+    </div>
+
+    <h1 class="hero-headline display-xl">
+      <span class="hero-headline-line"><span>Where every</span></span>
+      <span class="hero-headline-line"><span>balcony breathes</span></span>
+      <span class="hero-headline-line"><span>two-hundred feet apart.</span></span>
+    </h1>
+
+    <p class="hero-sub">
+      9 towers. 10 acres. 80% open space. Carved into the foothills of Pashan, ANP Privado is Pune's most uncompromising residential statement — designed for those who value silence as much as sight.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/918857090799?text=Hi%2C%20I'd%20like%20to%20schedule%20a%20private%20site%20visit%20for%20ANP%20Privado" 
+         target="_blank" rel="noopener" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Schedule My Site Visit
+      </a>
+      <a href="#story" class="btn btn-ghost">
+        Discover the Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat-item">
+      <div class="stat-number">10</div>
+      <div class="stat-label">Acres</div>
+    </div>
+    <div class="hero-stat-item">
+      <div class="stat-number">9</div>
+      <div class="stat-label">Towers</div>
+    </div>
+    <div class="hero-stat-item">
+      <div class="stat-number">65<span style="font-size:0.6em;color:var(--color-gold);">+</span></div>
+      <div class="stat-label">Amenities</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     TRUST STRIP
+     ================================================ -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <span class="gold">●</span>
+      <strong>Tower E</strong>&nbsp;Now Open for Sale
+    </div>
+    <span class="trust-divider"></span>
+    <div class="trust-item">A project by <strong>ANP&nbsp;+&nbsp;Sunshine Developers</strong></div>
+    <span class="trust-divider"></span>
+    <div class="trust-item">MahaRERA&nbsp;<strong>PR1260002500840</strong></div>
+    <span class="trust-divider"></span>
+    <div class="trust-item"><strong>Show Flat Ready</strong>&nbsp;· Visit Today</div>
+  </div>
+</div>
+
+<!-- ================================================
+     STORY / POSITIONING
+     ================================================ -->
+<section class="story section" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <span class="eyebrow">The Philosophy</span>
+        <h2 class="display-lg">In a world full of <span class="italic gold">crazes</span>, you want your own space.</h2>
+        <p class="body-lg">
+          Where Pashan Hill stands tall, sunlight embraces, and greenery shields — a sanctuary of rare privacy, where peace begins anew each morning.
+        </p>
+        <p class="body-lg">
+          Every residence at ANP Privado is corner-positioned. Every tower stands approximately two hundred feet from the next. Every ritual, from sunrise to silence, is yours alone.
+        </p>
+      </div>
+
+      <div class="story-visual reveal">
+        <!-- 
+          IMAGE REFERENCE:
+          Source: ANP_Privado_M_Brochure_V2.pdf — Page 1
+          Description: Editorial portrait of woman in flowing white silk dress, soft natural light,
+          serene expression, surrounded by ethereal greenery / mist. The brochure's signature
+          "privacy as feeling" image. Vertical composition (4:5 aspect ratio).
+          Recommended file: assets/story-privacy-portrait.jpg (1600x2000 minimum)
+        -->
+        <div class="story-visual-caption">
+          "Privacy of thoughts. Privacy of silence. Privacy of being."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     STATS BANNER (Anchoring + Authority)
+     ================================================ -->
+<section class="stats-banner">
+  <div class="stats-banner-inner">
+    <div class="stat-block reveal">
+      <div class="stat-num" data-count="10">10<span class="unit">acres</span></div>
+      <div class="stat-desc">Of Curated Land<br>In the Heart of Baner</div>
+    </div>
+    <div class="stat-block reveal">
+      <div class="stat-num" data-count="9">9<span class="unit">towers</span></div>
+      <div class="stat-desc">Up to 34 Floors<br>200 ft Inter-Tower Distance</div>
+    </div>
+    <div class="stat-block reveal">
+      <div class="stat-num" data-count="80">80<span class="unit">%</span></div>
+      <div class="stat-desc">Open Space<br>Reserved for Greenery</div>
+    </div>
+    <div class="stat-block reveal">
+      <div class="stat-num" data-count="50">50K<span class="unit">sqft</span></div>
+      <div class="stat-desc">Indoor Clubhouse<br>One of Pune's Largest</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     LOCATION ADVANTAGE
+     ================================================ -->
+<section class="location section" id="location">
+  <div class="container">
+    <div class="location-header">
+      <div class="reveal">
+        <span class="eyebrow">The Address</span>
+        <h2 class="display-lg" style="margin-top: 1rem;">Baner, where the city's<br><span class="italic gold">energy meets quiet.</span></h2>
+      </div>
+      <div class="location-header-right reveal">
+        <p>Anchored on Pan Card Club Road in Pune's Western Corridor — surrounded by tree-lined streets, walking distance from Pashan Hill, minutes from every essential.</p>
+      </div>
+    </div>
+
+    <div class="location-grid">
+      <div class="location-cell reveal">
+        <div class="location-cell-cat">Healthcare</div>
+        <ul class="location-cell-list">
+          <li>Manipal Hospitals <span class="time">5 min</span></li>
+          <li>Jupiter Hospital <span class="time">5 min</span></li>
+          <li>Vitalife Healing Hands <span class="time">5 min</span></li>
+          <li>Ankura Hospital <span class="time">12 min</span></li>
+        </ul>
+      </div>
+      <div class="location-cell reveal">
+        <div class="location-cell-cat">Lifestyle</div>
+        <ul class="location-cell-list">
+          <li>Balewadi High Street <span class="time">7 min</span></li>
+          <li>Westend Mall, Aundh <span class="time">10 min</span></li>
+          <li>Phoenix Mall of the Millennium <span class="time">15 min</span></li>
+          <li>The Pavillion Mall <span class="time">20 min</span></li>
+        </ul>
+      </div>
+      <div class="location-cell reveal">
+        <div class="location-cell-cat">Education</div>
+        <ul class="location-cell-list">
+          <li>VIBGYOR High School <span class="time">4 min</span></li>
+          <li>Rabindranath Tagore School <span class="time">10 min</span></li>
+          <li>NICMAR <span class="time">10 min</span></li>
+          <li>Symbiosis Institutes <span class="time">15 min</span></li>
+        </ul>
+      </div>
+      <div class="location-cell reveal">
+        <div class="location-cell-cat">Work</div>
+        <ul class="location-cell-list">
+          <li>Balewadi IT Park <span class="time">5 min</span></li>
+          <li>ANP THINQ <span class="time">10 min</span></li>
+          <li>ICC Trade Tower, SB Road <span class="time">16 min</span></li>
+          <li>Hinjewadi IT Park <span class="time">18 min</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     CINEMATIC CTA #1
+     ================================================ -->
+<section class="cta-cinematic section">
+  <div class="cta-cinematic-inner">
+    <span class="eyebrow">A Limited Invitation</span>
+    <h2 class="display-lg">Tower E is now open. <span class="italic">Limited residences remain.</span></h2>
+    <p class="body-lg">Pre-launch pricing is active for a limited window. Site visits are scheduled by appointment to preserve the privacy of every guest.</p>
+    <a href="https://wa.me/918857090799?text=Hi%2C%20I'm%20interested%20in%20Tower%20E%20at%20ANP%20Privado.%20Please%20share%20availability%20and%20pricing." 
+       target="_blank" rel="noopener" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Check Availability on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ================================================
+     AMENITIES
+     ================================================ -->
+<section class="amenities section" id="amenities">
+  <div class="container">
+    <div class="amenities-intro reveal">
+      <span class="eyebrow">65+ Amenities</span>
+      <h2 class="display-lg">Where elevation becomes <span class="italic gold">an attitude.</span></h2>
+      <p class="body-lg">A 50,000 sq.ft. indoor clubhouse. Three pools. A multi-level adventure forest. A canopy walk between towers. Every craft, considered.</p>
+    </div>
+
+    <div class="amenities-grid">
+      <!-- Sport & Active -->
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="18"/>
+            <path d="M24 6v36M6 24h36M11 11l26 26M37 11L11 37"/>
+          </svg>
+        </div>
+        <h3 class="amenity-title">Sport &amp; Active</h3>
+        <p class="amenity-list">Pickleball arena · Futsal court · Half-court hoops · Cricket simulator · Open-air fitness · Jogging track · Box cricket · 2× Squash courts · 2× Badminton courts</p>
+      </div>
+
+      <!-- Aquatic -->
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 32c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/>
+            <path d="M4 39c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/>
+            <circle cx="20" cy="14" r="4"/>
+            <path d="M24 18l8 8"/>
+          </svg>
+        </div>
+        <h3 class="amenity-title">Aquatic Realms</h3>
+        <p class="amenity-list">Vitality pool · Lazy river · Swimming arena · Toddlers' splash pool · Sunken wet lounge with pressure jets · All-season indoor heated pool · Pool lounge decks</p>
+      </div>
+
+      <!-- Wellness -->
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 8c-8 0-14 6-14 14 0 8 14 18 14 18s14-10 14-18c0-8-6-14-14-14z"/>
+            <circle cx="24" cy="22" r="4"/>
+          </svg>
+        </div>
+        <h3 class="amenity-title">Wellness Retreats</h3>
+        <p class="amenity-list">Aroma garden · Zen court · Coffee deck · Reading corners · Seniors' lounge · Trellis shade · Parents' lounge · Outdoor co-working station</p>
+      </div>
+
+      <!-- Nature -->
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 4v40M24 14c-6 0-10 4-10 10 0-6 4-10 10-10zM24 14c6 0 10 4 10 10 0-6-4-10-10-10zM24 26c-4 0-8 3-8 8 0-5 4-8 8-8zM24 26c4 0 8 3 8 8 0-5-4-8-8-8z"/>
+          </svg>
+        </div>
+        <h3 class="amenity-title">Nature &amp; Forest</h3>
+        <p class="amenity-list">Miyawaki Forest · Multi-level adventure forest · Canopy walk between towers · Pet park · Butterfly garden lounge · Heritage orchard grove · Native fruit-bearing trees</p>
+      </div>
+
+      <!-- Family -->
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="14" r="5"/>
+            <circle cx="32" cy="14" r="5"/>
+            <path d="M6 38c0-6 4-10 10-10s10 4 10 10M22 38c0-6 4-10 10-10s10 4 10 10"/>
+          </svg>
+        </div>
+        <h3 class="amenity-title">Family Spaces</h3>
+        <p class="amenity-list">Children's interactive play areas · Toddlers' cove · Tricycle track · Kids' play area · Indoor crèche · Adventure playground with mounds and tunnels · Movable stage</p>
+      </div>
+
+      <!-- Clubhouse -->
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 42V20l18-12 18 12v22"/>
+            <path d="M16 42V28h16v14"/>
+            <path d="M22 28v6M26 28v6"/>
+          </svg>
+        </div>
+        <h3 class="amenity-title">The Clubhouse</h3>
+        <p class="amenity-list">50,000 sq.ft. indoor space · Regal banquet hall · Private luxe theatre · Gourmet kitchen · Alfresco lawn · Elite fitness studio · Games lounge · Professionals' conclave</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FLOOR PLAN SECTION (Locked)
+     ================================================ -->
+<section class="floorplans section" id="floorplans">
+  <div class="container">
+    <div class="floorplans-header">
+      <div class="reveal">
+        <span class="eyebrow">Residences</span>
+        <h2 class="display-lg" style="margin-top: 1rem;">Super-sized layouts.<br><span class="italic gold">Above-standard ceilings.</span></h2>
+      </div>
+      <div class="floorplans-header-right reveal">
+        <p>3400mm floor-to-floor height. Imported marble across all rooms. En suite washrooms. Powder rooms in every apartment. The full plans are unlocked privately on WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="floorplans-grid">
+      <!-- 3BHK -->
+      <div class="fp-card locked reveal">
+        <div class="fp-card-visual">
+          <div class="fp-locked-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="5" y="11" width="14" height="10" rx="1"/>
+              <path d="M8 11V7a4 4 0 018 0v4"/>
+            </svg>
+            <div class="lock-text">"Detailed plan available privately"</div>
+          </div>
+        </div>
+        <div class="fp-card-body">
+          <div class="fp-card-tag">Most In Demand</div>
+          <div class="fp-card-title">3 BHK · Type 02</div>
+          <div class="fp-card-meta">
+            <span><strong>1489</strong> sqft carpet</span>
+            <span style="color: var(--color-stone-light);">·</span>
+            <span><strong>Walk-in wardrobe</strong></span>
+          </div>
+          <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20floor%20plan%20of%203BHK%20Type%2002%20at%20ANP%20Privado." 
+             target="_blank" rel="noopener" class="fp-unlock-btn">
+            Unlock Floor Plan
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4BHK -->
+      <div class="fp-card locked reveal">
+        <div class="fp-card-visual">
+          <div class="fp-locked-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="5" y="11" width="14" height="10" rx="1"/>
+              <path d="M8 11V7a4 4 0 018 0v4"/>
+            </svg>
+            <div class="lock-text">"Available on private request"</div>
+          </div>
+        </div>
+        <div class="fp-card-body">
+          <div class="fp-card-tag">Tower 1 Premium</div>
+          <div class="fp-card-title">4 BHK · Type 05</div>
+          <div class="fp-card-meta">
+            <span><strong>3000</strong> sqft carpet</span>
+            <span style="color: var(--color-stone-light);">·</span>
+            <span><strong>Family Room</strong></span>
+          </div>
+          <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20floor%20plan%20of%204BHK%20Type%2005%20at%20ANP%20Privado." 
+             target="_blank" rel="noopener" class="fp-unlock-btn">
+            Unlock Floor Plan
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5BHK -->
+      <div class="fp-card locked reveal">
+        <div class="fp-card-visual">
+          <div class="fp-locked-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="5" y="11" width="14" height="10" rx="1"/>
+              <path d="M8 11V7a4 4 0 018 0v4"/>
+            </svg>
+            <div class="lock-text">"By appointment only"</div>
+          </div>
+        </div>
+        <div class="fp-card-body">
+          <div class="fp-card-tag">Ultra Luxury</div>
+          <div class="fp-card-title">5 BHK · Sky Residence</div>
+          <div class="fp-card-meta">
+            <span><strong>4686</strong> sqft carpet</span>
+            <span style="color: var(--color-stone-light);">·</span>
+            <span><strong>Home Theatre</strong></span>
+          </div>
+          <a href="https://wa.me/918857090799?text=Hi%2C%20I'm%20interested%20in%20the%205BHK%20Sky%20Residence%20at%20ANP%20Privado.%20Please%20share%20floor%20plan%20and%20pricing." 
+             target="_blank" rel="noopener" class="fp-unlock-btn">
+            Request Private Plan
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     PRICING (Anchored — Isaac Rudansky Section 3)
+     ================================================ -->
+<section class="pricing section" id="pricing">
+  <div class="container">
+    <div style="max-width: 750px;">
+      <span class="eyebrow reveal">Pre-Launch Pricing</span>
+      <h2 class="display-lg reveal" style="margin-top: 1rem;">A residence here begins where most luxury projects <span class="italic gold">end.</span></h2>
+      <p class="body-lg reveal" style="color: var(--color-stone); margin-top: 1.5rem; max-width: 600px;">
+        Indicative starting prices. Final pricing depends on tower, floor, configuration, and view orientation. Detailed cost sheets are shared on WhatsApp.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-card-tag">3 Bedroom</div>
+        <div class="pricing-card-config">3 BHK Residences</div>
+        <div class="pricing-card-area">1309 — 1489 sqft carpet</div>
+        <div class="price-display">
+          <div class="price-from">Starting from</div>
+          <div class="price-amount">
+            <span class="price-currency">₹</span>2.65<span style="font-size: 0.4em; margin-left: 0.3rem; color: var(--color-stone);">Cr*</span>
+          </div>
+          <div class="price-meta">All Inclusive · Indicative</div>
+        </div>
+        <ul class="pricing-features">
+          <li>3400mm floor-to-floor ceiling height</li>
+          <li>Imported marble throughout the residence</li>
+          <li>Hans Grohe & Duravit fittings</li>
+          <li>Provision for centralised VRV AC</li>
+        </ul>
+        <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20cost%20sheet%20for%20the%203BHK%20at%20ANP%20Privado." 
+           target="_blank" rel="noopener" class="btn btn-primary">
+          Get Detailed Cost Sheet
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="pricing-card reveal">
+        <div class="pricing-card-tag">4 Bedroom</div>
+        <div class="pricing-card-config">4 BHK Residences</div>
+        <div class="pricing-card-area">1855 — 3000 sqft carpet</div>
+        <div class="price-display">
+          <div class="price-from">Starting from</div>
+          <div class="price-amount">
+            <span class="price-currency">₹</span>4.05<span style="font-size: 0.4em; margin-left: 0.3rem; color: var(--color-stone);">Cr*</span>
+          </div>
+          <div class="price-meta">All Inclusive · Indicative</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Servant room + utility provision</li>
+          <li>Walk-in wardrobes &amp; en suite washrooms</li>
+          <li>Family room + sit-out balcony</li>
+          <li>Multiple corner residences with hill view</li>
+        </ul>
+        <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20cost%20sheet%20for%20the%204BHK%20at%20ANP%20Privado." 
+           target="_blank" rel="noopener" class="btn btn-primary">
+          Get Detailed Cost Sheet
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <p style="margin-top: 3rem; font-size: 0.78rem; color: var(--color-stone); letter-spacing: 0.05em; max-width: 700px;">
+      *All Inclusive prices include GST and applicable charges. Final pricing varies by floor, view orientation, and tower selection. Prices are subject to revision without notice.
+    </p>
+  </div>
+</section>
+
+<!-- ================================================
+     PROCESS — Three Steps to Booking
+     ================================================ -->
+<section class="process section">
+  <div class="container">
+    <div class="process-intro reveal">
+      <span class="eyebrow">The Visit, Curated</span>
+      <h2 class="display-lg">From <span class="italic gold">enquiry</span> to address.</h2>
+      <p class="body-lg">A simple, considered three-step path. Designed to respect your time and your decision.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <h3 class="process-step-title">Enquire on WhatsApp</h3>
+        <p class="process-step-desc">Share your preferred configuration. We send the cost sheet, floor plan, and possession timeline within hours — directly on WhatsApp.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-step-num">02</div>
+        <h3 class="process-step-title">Private Site Visit</h3>
+        <p class="process-step-desc">Visit the show flat at your convenience. Walk the 10 acres. See the 200 ft inter-tower gap. Experience the silence first-hand. We arrange transport on request.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-step-num">03</div>
+        <h3 class="process-step-title">Reserve Your Residence</h3>
+        <p class="process-step-desc">Choose your tower, floor, and view. Lock pre-launch pricing with a refundable token. Bank approvals from SBI, HDFC, ICICI, Axis are in place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FINAL CTA
+     ================================================ -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <span class="eyebrow gold">A Quiet Invitation</span>
+    <h2 class="display-xl">Your next chapter rises here. <span class="italic">In the heart of privacy.</span></h2>
+    <p class="body-lg">Tower E is open. Pre-launch pricing is active. The show flat is ready for visit.<br>Send a message. We'll handle the rest.</p>
+    <div class="final-cta-actions">
+      <a href="https://wa.me/918857090799?text=Hi%2C%20I'd%20like%20to%20book%20a%20site%20visit%20for%20ANP%20Privado%2C%20Baner.%20Please%20share%20the%20cost%20sheet%20and%20available%20slots." 
+         target="_blank" rel="noopener" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Schedule My Site Visit
+      </a>
+      <a href="tel:+918857090799" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Or Call Now
+      </a>
+    </div>
+    <p class="final-cta-fineprint">+91 8857090799 · Reply within 2 hours · No spam, ever.</p>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Privado<span style="color: var(--color-gold);">.</span></div>
+      <p class="footer-tag">"An Abode of Privacy. Where every balcony breathes two-hundred feet apart."</p>
+      <p class="footer-rera">MahaRERA No.: PR1260002500840<br>maharera.maharashtra.gov.in</p>
+    </div>
+    <div>
+      <h5>Project</h5>
+      <ul>
+        <li><a href="#story">Philosophy</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#floorplans">Residences</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://wa.me/918857090799" target="_blank" rel="noopener">WhatsApp · +91 8857090799</a></li>
+        <li><a href="tel:+918857090799">Call Sales Team</a></li>
+        <li>Site: Sr. No. 16, Pan Card Club Road, Baner, Pune</li>
+        <li>Show Flat Open · Daily 10:00 — 19:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© ANP Corp · Sunshine Developers. All visuals are artist's impressions.</div>
+    <div>This is not a legal document. Plans subject to change.</div>
+  </div>
+</footer>
+
+<!-- ================================================
+     FLOATING WHATSAPP
+     ================================================ -->
+<a href="https://wa.me/918857090799?text=Hi%2C%20I'd%20like%20more%20information%20about%20ANP%20Privado%2C%20Baner." 
+   target="_blank" rel="noopener" 
+   class="float-whatsapp" 
+   aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ================================================
+     SCRIPTS
+     ================================================ -->
+<script>
+// Mark body as JS-enabled (controls reveal animations)
+document.body.classList.add('js-enabled');
+
+// =============== STICKY NAV ON SCROLL ===============
+const nav = document.getElementById('nav');
+const heroSection = document.querySelector('.hero');
+
+function handleNavScroll() {
+  const heroHeight = heroSection.offsetHeight;
+  const scrollY = window.scrollY;
+
+  if (scrollY > heroHeight - 100) {
+    nav.classList.remove('hero-mode');
+    nav.classList.add('scrolled');
+  } else if (scrollY > 60) {
+    nav.classList.add('hero-mode', 'scrolled');
+  } else {
+    nav.classList.add('hero-mode');
+    nav.classList.remove('scrolled');
+  }
+}
+window.addEventListener('scroll', handleNavScroll, { passive: true });
+handleNavScroll();
+
+// =============== INTERSECTION REVEAL ===============
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+
+reveals.forEach(el => revealObserver.observe(el));
+
+// =============== GSAP SCROLL ANIMATIONS ===============
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Parallax on hero media
+  gsap.to('.hero-media', {
+    yPercent: 25,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  // Animated stat counters
+  document.querySelectorAll('.stat-num[data-count]').forEach(el => {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const unitEl = el.querySelector('.unit');
+    const unitHTML = unitEl ? unitEl.outerHTML : '';
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: () => {
+        const obj = { val: 0 };
+        gsap.to(obj, {
+          val: target,
+          duration: 1.8,
+          ease: 'power2.out',
+          onUpdate: () => {
+            const display = target === 50 ? Math.floor(obj.val) + 'K' : Math.floor(obj.val);
+            el.innerHTML = display + unitHTML;
+          }
+        });
+      },
+      once: true
+    });
+  });
+}
+
+// =============== SMOOTH SCROLL (anchor offset) ===============
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const targetId = link.getAttribute('href');
+    if (targetId === '#') return;
+    const target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      const offset = target.getBoundingClientRect().top + window.scrollY - 60;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
