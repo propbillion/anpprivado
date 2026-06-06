@@ -1,1708 +1,613 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#0a0a0a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+<meta name="theme-color" content="#005544" />
 
-<!-- SEO -->
-<title>ANP Privado, Baner — An Abode of Privacy | 3 & 4 BHK from ₹2.65 Cr*</title>
-<meta name="description" content="ANP Privado, Baner. 10 acres. 9 towers. 3 & 4 BHK luxury residences from ₹2.65 Cr*. RERA: PR1260002500840. Show flat ready. Schedule a private site visit." />
-<meta name="keywords" content="ANP Privado, Baner Pune, 3BHK Baner, 4BHK Baner, luxury apartments Pune, Pan Card Club Road" />
-<meta name="robots" content="index, follow" />
+<title>ANP Privado · Baner, Pune | 10-Acre Low-Density Township | 3 &amp; 4 BHK Luxury Residences</title>
+<meta name="description" content="ANP Privado, Baner — a 10-acre, low-density address on Pan Card Club Road. 9 towers (G+34), all-corner 3 &amp; 4 BHK residences, 80% open space, 50,000 sq.ft clubhouse, 65+ amenities, 200 ft tower-to-tower spacing. From ₹2.65 Cr*. MahaRERA PR1260002500840." />
+<meta name="keywords" content="ANP Privado Baner, ANP Privado Pune, Luxury Homes in Baner, Premium Apartments in Baner, ANP Baner Project, Luxury Residences Pune, 3 BHK Baner, 4 BHK Baner, Pan Card Club Road Baner" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ANP Privado, Baner — An Abode of Privacy" />
-<meta property="og:description" content="3 & 4 BHK luxury residences. 10 acres. 9 towers. From ₹2.65 Cr*. Show flat ready." />
-<meta property="og:image" content="https://example.com/og-privado.jpg" />
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-<style>
-/* ===========================================
-   ANP PRIVADO — DESIGN TOKENS
-   =========================================== */
-:root {
-  --color-ink: #0a0a0a;
-  --color-ink-soft: #1a1a1a;
-  --color-cream: #f5f1ea;
-  --color-cream-deep: #ebe5da;
-  --color-bone: #faf7f2;
-  --color-stone: #8a847a;
-  --color-stone-light: #b8b1a4;
-  --color-gold: #c9a96e;
-  --color-gold-deep: #a88654;
-  --color-rust: #8b3a1f;
-  --color-whatsapp: #25d366;
-  --color-whatsapp-dark: #128c7e;
-
-  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
-  --font-body: 'Manrope', -apple-system, sans-serif;
-
-  --ease-luxury: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-
-  --max-width: 1440px;
-  --gutter: clamp(1.5rem, 5vw, 5rem);
-}
-
-/* ===========================================
-   RESET + BASE
-   =========================================== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-ink);
-  background: var(--color-bone);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-img { max-width: 100%; display: block; height: auto; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
-
-/* Selection */
-::selection { background: var(--color-ink); color: var(--color-cream); }
-
-/* ===========================================
-   TYPOGRAPHY
-   =========================================== */
-.eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--color-stone);
-  display: inline-block;
-}
-
-.display-xl {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(3rem, 9vw, 8.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
-.display-lg {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
-  line-height: 1;
-  letter-spacing: -0.015em;
-}
-
-.display-md {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-}
-
-.display-sm {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-  line-height: 1.15;
-}
-
-.italic { font-style: italic; font-weight: 300; }
-
-.body-lg { font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.6; }
-.body-sm { font-size: 0.85rem; line-height: 1.55; color: var(--color-stone); }
-
-/* ===========================================
-   LAYOUT
-   =========================================== */
-.container { max-width: var(--max-width); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
-.section { padding-top: clamp(5rem, 10vw, 9rem); padding-bottom: clamp(5rem, 10vw, 9rem); }
-
-/* ===========================================
-   STICKY NAV
-   =========================================== */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 1.25rem var(--gutter);
-  display: flex; justify-content: space-between; align-items: center;
-  transition: all 0.5s var(--ease-luxury);
-  background: rgba(250, 247, 242, 0);
-}
-.nav.scrolled {
-  background: rgba(250, 247, 242, 0.85);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(10, 10, 10, 0.06);
-  padding-top: 0.85rem; padding-bottom: 0.85rem;
-}
-.nav-brand {
-  font-family: var(--font-display);
-  font-size: 1.5rem; font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--color-ink);
-  transition: color 0.4s;
-}
-.nav.hero-mode .nav-brand { color: var(--color-cream); }
-.nav.hero-mode .nav-cta { color: var(--color-cream); border-color: rgba(245, 241, 234, 0.3); }
-.nav.hero-mode .nav-cta:hover { background: var(--color-cream); color: var(--color-ink); }
-
-.nav-cta {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.7rem 1.4rem;
-  border: 1px solid rgba(10, 10, 10, 0.2);
-  border-radius: 999px;
-  font-size: 0.78rem; font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--color-ink);
-  transition: all 0.4s var(--ease-luxury);
-}
-.nav-cta:hover { background: var(--color-ink); color: var(--color-cream); border-color: var(--color-ink); }
-.nav-cta svg { width: 14px; height: 14px; }
-
-/* ===========================================
-   HERO
-   =========================================== */
-.hero {
-  position: relative;
-  min-height: 100vh; min-height: 100svh;
-  background: var(--color-ink);
-  color: var(--color-cream);
-  display: flex; flex-direction: column;
-  overflow: hidden;
-}
-
-.hero-media {
-  position: absolute; inset: 0;
-  z-index: 1;
-}
-
-/* IMAGE REFERENCE: ANP_Privado_M_Brochure_V2.pdf — Page 1 hero shot. 
-   Cinematic exterior render of the 9-tower complex at twilight,
-   Pashan Hill backdrop, warm interior lights, dramatic sky. */
-.hero-media::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.85) 100%),
-    radial-gradient(ellipse at 30% 40%, #2a1a14 0%, #0a0a0a 70%);
-  background-size: cover;
-  background-position: center;
-}
-
-/* Subtle architectural lines overlay */
-.hero-media::after {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(90deg, transparent 49.9%, rgba(201, 169, 110, 0.08) 50%, transparent 50.1%),
-    linear-gradient(180deg, transparent 49.9%, rgba(201, 169, 110, 0.04) 50%, transparent 50.1%);
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative; z-index: 2;
-  flex: 1;
-  display: flex; flex-direction: column;
-  justify-content: flex-end;
-  padding: 8rem var(--gutter) clamp(3rem, 6vw, 5rem);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  width: 100%;
-}
-
-.hero-meta {
-  display: flex; gap: 2rem; align-items: center;
-  margin-bottom: 2.5rem;
-  opacity: 0; transform: translateY(20px);
-  animation: fadeUp 1.2s var(--ease-out-expo) 0.3s forwards;
-}
-.hero-meta .eyebrow { color: var(--color-gold); }
-.hero-meta-divider { width: 30px; height: 1px; background: rgba(245, 241, 234, 0.3); }
-
-.hero-headline {
-  margin-bottom: 1.5rem;
-  max-width: 1100px;
-}
-.hero-headline-line {
-  display: block;
-  overflow: hidden;
-}
-.hero-headline-line span {
-  display: inline-block;
-  transform: translateY(110%);
-  animation: heroLineUp 1.4s var(--ease-out-expo) forwards;
-}
-.hero-headline-line:nth-child(1) span { animation-delay: 0.5s; }
-.hero-headline-line:nth-child(2) span { animation-delay: 0.7s; }
-.hero-headline-line:nth-child(3) span { animation-delay: 0.9s; font-style: italic; color: var(--color-gold); }
-
-.hero-sub {
-  max-width: 540px;
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  line-height: 1.5;
-  color: rgba(245, 241, 234, 0.75);
-  margin-bottom: 3rem;
-  opacity: 0; transform: translateY(20px);
-  animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
-}
-
-.hero-actions {
-  display: flex; flex-wrap: wrap; gap: 1rem;
-  align-items: center;
-  opacity: 0; transform: translateY(20px);
-  animation: fadeUp 1s var(--ease-out-expo) 1.6s forwards;
-}
-
-.hero-stats {
-  position: absolute;
-  right: var(--gutter);
-  bottom: clamp(3rem, 6vw, 5rem);
-  z-index: 2;
-  display: flex; gap: 2.5rem;
-  opacity: 0;
-  animation: fadeUp 1s var(--ease-out-expo) 1.8s forwards;
-}
-.hero-stat-item .stat-number {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
-  font-weight: 300;
-  color: var(--color-cream);
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-.hero-stat-item .stat-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(245, 241, 234, 0.6);
-}
-
-@media (max-width: 768px) {
-  .hero-stats { display: none; }
-  .hero-meta { flex-wrap: wrap; gap: 1rem; }
-  .hero-meta-divider { display: none; }
-}
-
-/* ===========================================
-   BUTTONS
-   =========================================== */
-.btn {
-  display: inline-flex; align-items: center; gap: 0.65rem;
-  padding: 1.05rem 2rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  transition: all 0.4s var(--ease-luxury);
-  position: relative;
-  overflow: hidden;
-}
-.btn svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease-luxury); }
-.btn:hover svg { transform: translateX(4px); }
-
-.btn-primary {
-  background: var(--color-whatsapp);
-  color: white;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
-}
-.btn-primary:hover {
-  background: var(--color-whatsapp-dark);
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
-  transform: translateY(-2px);
-}
-
-.btn-ghost {
-  border: 1px solid rgba(245, 241, 234, 0.3);
-  color: var(--color-cream);
-}
-.btn-ghost:hover { background: var(--color-cream); color: var(--color-ink); border-color: var(--color-cream); }
-
-.btn-dark {
-  background: var(--color-ink);
-  color: var(--color-cream);
-}
-.btn-dark:hover { background: var(--color-ink-soft); transform: translateY(-2px); }
-
-.btn-outline-dark {
-  border: 1px solid var(--color-ink);
-  color: var(--color-ink);
-}
-.btn-outline-dark:hover { background: var(--color-ink); color: var(--color-cream); }
-
-/* ===========================================
-   FLOATING WHATSAPP
-   =========================================== */
-.float-whatsapp {
-  position: fixed;
-  right: 1.5rem; bottom: 1.5rem;
-  z-index: 90;
-  width: 64px; height: 64px;
-  background: var(--color-whatsapp);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
-  transition: all 0.4s var(--ease-luxury);
-  animation: pulse 2s infinite;
-}
-.float-whatsapp:hover { transform: scale(1.1); animation: none; }
-.float-whatsapp svg { width: 30px; height: 30px; fill: white; }
-.float-whatsapp::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid var(--color-whatsapp);
-  opacity: 0;
-  animation: ping 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4); }
-  50% { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7), 0 0 0 8px rgba(37, 211, 102, 0.1); }
-}
-@keyframes ping {
-  0% { opacity: 0.6; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1.5); }
-}
-
-/* ===========================================
-   ANIMATIONS
-   =========================================== */
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes heroLineUp {
-  to { transform: translateY(0); }
-}
-
-/* Reveal: starts hidden only if JS is active. Fallback: visible by default. */
-.js-enabled .reveal { opacity: 0; transform: translateY(40px); transition: all 1s var(--ease-out-expo); }
-.js-enabled .reveal.in-view { opacity: 1; transform: translateY(0); }
-
-/* ===========================================
-   TRUST STRIP
-   =========================================== */
-.trust-strip {
-  background: var(--color-ink);
-  color: var(--color-cream);
-  padding: 1.5rem var(--gutter);
-  border-bottom: 1px solid rgba(245, 241, 234, 0.08);
-}
-.trust-strip-inner {
-  max-width: var(--max-width); margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 1.5rem;
-}
-.trust-item {
-  display: flex; align-items: center; gap: 0.75rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  color: rgba(245, 241, 234, 0.7);
-}
-.trust-item strong { color: var(--color-cream); font-weight: 500; }
-.trust-divider { width: 1px; height: 14px; background: rgba(245, 241, 234, 0.15); }
-@media (max-width: 768px) {
-  .trust-divider { display: none; }
-  .trust-strip-inner { justify-content: center; }
-}
-
-/* ===========================================
-   STORY / POSITIONING
-   =========================================== */
-.story {
-  background: var(--color-bone);
-  position: relative;
-}
-.story-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 6vw, 6rem);
-  align-items: center;
-}
-@media (max-width: 900px) {
-  .story-grid { grid-template-columns: 1fr; }
-}
-
-.story-text { max-width: 540px; }
-.story-text .display-lg { margin: 1.5rem 0 2rem; }
-.story-text .body-lg { color: var(--color-stone); margin-bottom: 1.5rem; }
-
-.story-visual {
-  position: relative;
-  aspect-ratio: 4/5;
-  background: var(--color-cream-deep);
-  overflow: hidden;
-}
-/* IMAGE REFERENCE: Brochure page 1 — woman standing in flowing white dress
-   in serene natural setting. Conveys "privacy, peace, sanctuary".
-   Replace .story-visual::before with this image. */
-.story-visual::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(135deg, rgba(245, 241, 234, 0.2) 0%, rgba(184, 177, 164, 0.4) 100%),
-    repeating-linear-gradient(45deg, transparent 0, transparent 20px, rgba(138, 132, 122, 0.05) 20px, rgba(138, 132, 122, 0.05) 21px);
-}
-.story-visual-caption {
-  position: absolute;
-  bottom: 2rem; left: 2rem; right: 2rem;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-  color: var(--color-ink);
-  line-height: 1.4;
-  z-index: 2;
-}
-
-/* ===========================================
-   STATS BANNER
-   =========================================== */
-.stats-banner {
-  background: var(--color-ink);
-  color: var(--color-cream);
-  padding: clamp(4rem, 7vw, 6rem) var(--gutter);
-}
-.stats-banner-inner {
-  max-width: var(--max-width); margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-@media (max-width: 768px) {
-  .stats-banner-inner { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
-}
-.stat-block { text-align: left; }
-.stat-block .stat-num {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 300;
-  line-height: 1;
-  color: var(--color-cream);
-  margin-bottom: 0.75rem;
-}
-.stat-block .stat-num .unit {
-  font-size: 0.4em; vertical-align: super;
-  color: var(--color-gold); margin-left: 0.2rem;
-}
-.stat-block .stat-desc {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-stone-light);
-  line-height: 1.5;
-}
-
-/* ===========================================
-   LOCATION
-   =========================================== */
-.location {
-  background: var(--color-cream);
-}
-.location-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: end;
-  margin-bottom: 4rem;
-}
-@media (max-width: 768px) {
-  .location-header { grid-template-columns: 1fr; }
-}
-.location-header-right { color: var(--color-stone); }
-
-.location-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--color-cream-deep);
-  border-top: 1px solid var(--color-cream-deep);
-  border-left: 1px solid var(--color-cream-deep);
-}
-@media (max-width: 900px) { .location-grid { grid-template-columns: repeat(2, 1fr); } }
-
-.location-cell {
-  background: var(--color-cream);
-  padding: 2rem 1.5rem;
-  transition: all 0.5s var(--ease-luxury);
-}
-.location-cell:hover { background: var(--color-bone); }
-.location-cell-cat {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-gold-deep);
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-.location-cell-list {
-  list-style: none;
-  display: flex; flex-direction: column;
-  gap: 0.65rem;
-}
-.location-cell-list li {
-  display: flex; justify-content: space-between;
-  align-items: baseline;
-  font-size: 0.9rem;
-  color: var(--color-ink);
-  border-bottom: 1px dotted var(--color-cream-deep);
-  padding-bottom: 0.5rem;
-}
-.location-cell-list .time {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--color-stone);
-  font-size: 0.85rem;
-}
-
-/* ===========================================
-   AMENITIES
-   =========================================== */
-.amenities {
-  background: var(--color-bone);
-}
-.amenities-intro {
-  max-width: 700px; margin: 0 auto 5rem;
-  text-align: center;
-}
-.amenities-intro .display-lg { margin: 1rem 0 1.5rem; }
-.amenities-intro .body-lg { color: var(--color-stone); }
-
-.amenities-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--color-cream-deep);
-  border: 1px solid var(--color-cream-deep);
-}
-@media (max-width: 900px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 500px) { .amenities-grid { grid-template-columns: 1fr; } }
-
-.amenity-card {
-  background: var(--color-bone);
-  padding: 2.5rem 2rem;
-  transition: all 0.5s var(--ease-luxury);
-  display: flex; flex-direction: column;
-  gap: 1rem;
-}
-.amenity-card:hover {
-  background: var(--color-ink);
-  color: var(--color-cream);
-}
-.amenity-card:hover .amenity-icon { color: var(--color-gold); }
-.amenity-card:hover .amenity-list { color: rgba(245, 241, 234, 0.65); }
-.amenity-card:hover .amenity-title { color: var(--color-cream); }
-
-.amenity-icon {
-  width: 36px; height: 36px;
-  color: var(--color-ink);
-  transition: color 0.5s;
-}
-.amenity-icon svg { width: 100%; height: 100%; stroke-width: 1; }
-
-.amenity-title {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--color-ink);
-  transition: color 0.5s;
-}
-.amenity-list {
-  font-size: 0.85rem;
-  color: var(--color-stone);
-  line-height: 1.7;
-  transition: color 0.5s;
-}
-
-/* ===========================================
-   CINEMATIC CTA SECTION
-   =========================================== */
-.cta-cinematic {
-  background: var(--color-ink);
-  color: var(--color-cream);
-  position: relative;
-  overflow: hidden;
-}
-.cta-cinematic::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse at 70% 30%, rgba(201, 169, 110, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 80%, rgba(139, 58, 31, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-.cta-cinematic-inner {
-  position: relative; z-index: 2;
-  max-width: 900px; margin: 0 auto;
-  text-align: center;
-  padding-left: var(--gutter); padding-right: var(--gutter);
-}
-.cta-cinematic .eyebrow { color: var(--color-gold); }
-.cta-cinematic .display-lg { margin: 1.5rem 0 2rem; }
-.cta-cinematic .body-lg { color: rgba(245, 241, 234, 0.7); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-/* ===========================================
-   FLOOR PLAN SECTION
-   =========================================== */
-.floorplans {
-  background: var(--color-bone);
-}
-.floorplans-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  align-items: end;
-  margin-bottom: 4rem;
-}
-@media (max-width: 768px) { .floorplans-header { grid-template-columns: 1fr; } }
-.floorplans-header-right { color: var(--color-stone); font-size: 0.95rem; line-height: 1.6; }
-
-.floorplans-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-@media (max-width: 900px) { .floorplans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
-
-.fp-card {
-  background: white;
-  border: 1px solid var(--color-cream-deep);
-  overflow: hidden;
-  transition: all 0.5s var(--ease-luxury);
-  position: relative;
-}
-.fp-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(10, 10, 10, 0.08);
-}
-.fp-card-visual {
-  position: relative;
-  aspect-ratio: 1/1;
-  background: var(--color-cream);
-  overflow: hidden;
-}
-/* Floor plan render placeholder — blurred for paid plans */
-.fp-card-visual::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(135deg, #faf7f2 0%, #ebe5da 100%),
-    repeating-linear-gradient(0deg, transparent 0, transparent 30px, rgba(138, 132, 122, 0.08) 30px, rgba(138, 132, 122, 0.08) 31px),
-    repeating-linear-gradient(90deg, transparent 0, transparent 30px, rgba(138, 132, 122, 0.08) 30px, rgba(138, 132, 122, 0.08) 31px);
-  background-blend-mode: multiply;
-}
-.fp-card.locked .fp-card-visual::before { filter: blur(14px); transform: scale(1.1); }
-.fp-card.locked .fp-card-visual::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: rgba(10, 10, 10, 0.35);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
-
-.fp-locked-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  z-index: 3;
-  color: var(--color-cream);
-  text-align: center;
-  padding: 2rem;
-}
-.fp-locked-overlay svg { width: 32px; height: 32px; margin-bottom: 1rem; opacity: 0.9; }
-.fp-locked-overlay .lock-text {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.fp-card-body {
-  padding: 1.75rem;
-  border-top: 1px solid var(--color-cream-deep);
-}
-.fp-card-tag {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-gold-deep);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-.fp-card-title {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-}
-.fp-card-meta {
-  font-size: 0.85rem;
-  color: var(--color-stone);
-  margin-bottom: 1.25rem;
-  display: flex; gap: 1rem; align-items: center;
-}
-.fp-card-meta strong { color: var(--color-ink); font-weight: 500; }
-
-.fp-unlock-btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: var(--color-ink);
-  color: var(--color-cream);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  transition: all 0.4s var(--ease-luxury);
-  font-weight: 500;
-}
-.fp-unlock-btn:hover { background: var(--color-whatsapp); }
-.fp-unlock-btn svg { width: 14px; height: 14px; }
-
-/* ===========================================
-   PRICING TEASER
-   =========================================== */
-.pricing {
-  background: var(--color-cream);
-  position: relative;
-}
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 4rem;
-}
-@media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
-
-.pricing-card {
-  background: var(--color-bone);
-  border: 1px solid var(--color-cream-deep);
-  padding: 3rem 2.5rem;
-  position: relative;
-  transition: all 0.5s var(--ease-luxury);
-}
-.pricing-card:hover {
-  background: var(--color-ink);
-  color: var(--color-cream);
-  border-color: var(--color-ink);
-}
-.pricing-card:hover .price-currency { color: var(--color-gold); }
-.pricing-card:hover .price-meta { color: rgba(245, 241, 234, 0.6); }
-.pricing-card:hover .pricing-features { color: rgba(245, 241, 234, 0.75); }
-.pricing-card:hover .pricing-features li::before { background: var(--color-gold); }
-.pricing-card:hover .pricing-card-tag { color: var(--color-gold); }
-
-.pricing-card-tag {
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--color-gold-deep);
-  margin-bottom: 1rem;
-  font-weight: 500;
-  transition: color 0.5s;
-}
-.pricing-card-config {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: 0.25rem;
-}
-.pricing-card-area {
-  color: var(--color-stone);
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-.price-display {
-  margin-bottom: 2rem;
-}
-.price-from {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-stone);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-.price-amount {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 300;
-  line-height: 1;
-  display: flex; align-items: baseline; gap: 0.3rem;
-}
-.price-currency {
-  font-size: 0.5em; color: var(--color-gold-deep); font-weight: 400;
-  transition: color 0.5s;
-}
-.price-meta {
-  font-size: 0.75rem;
-  color: var(--color-stone);
-  margin-top: 0.5rem;
-  letter-spacing: 0.05em;
-}
-.pricing-features {
-  list-style: none;
-  padding: 0; margin: 0 0 2rem;
-  font-size: 0.9rem;
-  color: var(--color-ink);
-  transition: color 0.5s;
-}
-.pricing-features li {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(138, 132, 122, 0.15);
-  position: relative;
-  padding-left: 1.5rem;
-}
-.pricing-features li::before {
-  content: '';
-  position: absolute; left: 0; top: 1rem;
-  width: 6px; height: 1px;
-  background: var(--color-gold-deep);
-  transition: background 0.5s;
-}
-.pricing-features li:last-child { border-bottom: none; }
-
-/* ===========================================
-   PROCESS / TIMELINE
-   =========================================== */
-.process {
-  background: var(--color-bone);
-}
-.process-intro {
-  max-width: 700px;
-  margin-bottom: 5rem;
-}
-.process-intro .display-lg { margin: 1rem 0 1.5rem; }
-.process-intro .body-lg { color: var(--color-stone); }
-
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  position: relative;
-}
-@media (max-width: 768px) { .process-steps { grid-template-columns: 1fr; } }
-
-.process-step {
-  position: relative;
-  padding: 2rem 0 0;
-  border-top: 1px solid var(--color-ink);
-}
-.process-step-num {
-  font-family: var(--font-display);
-  font-size: 4.5rem;
-  font-weight: 300;
-  line-height: 1;
-  color: var(--color-gold);
-  margin-bottom: 1.5rem;
-}
-.process-step-title {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-.process-step-desc {
-  color: var(--color-stone);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ===========================================
-   FINAL CTA
-   =========================================== */
-.final-cta {
-  background: var(--color-ink);
-  color: var(--color-cream);
-  padding: clamp(6rem, 12vw, 12rem) var(--gutter);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.final-cta::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 50%, rgba(201, 169, 110, 0.12) 0%, transparent 60%);
-}
-.final-cta-inner {
-  position: relative; z-index: 2;
-  max-width: 800px; margin: 0 auto;
-}
-.final-cta .display-xl { margin: 1.5rem 0 2rem; }
-.final-cta .display-xl .italic { color: var(--color-gold); }
-.final-cta .body-lg { color: rgba(245, 241, 234, 0.65); margin-bottom: 3rem; }
-.final-cta-actions {
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-}
-.final-cta-fineprint {
-  margin-top: 3rem;
-  font-size: 0.8rem;
-  color: rgba(245, 241, 234, 0.4);
-  letter-spacing: 0.05em;
-}
-
-/* ===========================================
-   FOOTER
-   =========================================== */
-.footer {
-  background: var(--color-ink);
-  color: var(--color-cream);
-  padding: 3rem var(--gutter) 2rem;
-  border-top: 1px solid rgba(245, 241, 234, 0.08);
-}
-.footer-inner {
-  max-width: var(--max-width); margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-@media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } }
-
-.footer-brand {
-  font-family: var(--font-display);
-  font-size: 2rem; font-weight: 400;
-  margin-bottom: 1rem;
-}
-.footer-tag {
-  font-style: italic; font-family: var(--font-display);
-  color: var(--color-stone-light); font-size: 1rem;
-  margin-bottom: 1.5rem; max-width: 400px;
-}
-.footer-rera {
-  font-size: 0.75rem;
-  color: rgba(245, 241, 234, 0.5);
-  letter-spacing: 0.05em;
-}
-.footer h5 {
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-.footer ul { list-style: none; padding: 0; }
-.footer ul li { padding: 0.4rem 0; font-size: 0.88rem; color: rgba(245, 241, 234, 0.7); }
-.footer ul li a:hover { color: var(--color-cream); }
-
-.footer-bottom {
-  max-width: var(--max-width); margin: 0 auto;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(245, 241, 234, 0.08);
-  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-  font-size: 0.78rem;
-  color: rgba(245, 241, 234, 0.4);
-}
-
-/* ===========================================
-   UTILITY
-   =========================================== */
-.gold { color: var(--color-gold); }
-.italic-display { font-family: var(--font-display); font-style: italic; font-weight: 300; }
-
-</style>
+<meta property="og:title" content="ANP Privado · Baner, Pune · An Abode of Privacy" />
+<meta property="og:description" content="10 acres. 9 towers. 80% open space. All-corner 3 &amp; 4 BHK residences with 200 ft tower-to-tower spacing, a 50,000 sq.ft clubhouse and 65+ amenities. From ₹2.65 Cr*. By ANP × Sunshine." />
+<meta property="og:image" content="hero-1.webp" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- ================================================
-     STICKY NAV
-     ================================================ -->
-<nav class="nav hero-mode" id="nav">
-  <a href="#" class="nav-brand">Privado<span style="color: var(--color-gold);">.</span></a>
-  <a href="https://wa.me/918857090799?text=Hi%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20ANP%20Privado%2C%20Baner" 
-     target="_blank" rel="noopener" class="nav-cta">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    WhatsApp
-  </a>
-</nav>
-
-<!-- ================================================
-     HERO — FULLSCREEN CINEMATIC
-     ================================================ -->
-<section class="hero">
-  <div class="hero-media">
-    <!-- 
-      IMAGE REFERENCE (replace ::before background with this):
-      Source: ANP_Privado_M_Brochure_V2.pdf — Page 1 (Hero spread)
-      Description: Cinematic exterior render of all 9 towers at golden hour / twilight,
-      Pashan Hill backdrop visible behind, warm interior lighting glowing from windows,
-      dramatic sky with soft cloud gradient. Shot from ground level looking up to convey scale.
-      Recommended file: assets/hero-towers-twilight.jpg (3840x2160 minimum)
-    -->
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-meta">
-      <span class="eyebrow gold">An Abode of Privacy</span>
-      <span class="hero-meta-divider"></span>
-      <span class="eyebrow">Baner · Pune</span>
-      <span class="hero-meta-divider"></span>
-      <span class="eyebrow">RERA · PR1260002500840</span>
-    </div>
-
-    <h1 class="hero-headline display-xl">
-      <span class="hero-headline-line"><span>Where every</span></span>
-      <span class="hero-headline-line"><span>balcony breathes</span></span>
-      <span class="hero-headline-line"><span>two-hundred feet apart.</span></span>
-    </h1>
-
-    <p class="hero-sub">
-      9 towers. 10 acres. 80% open space. Carved into the foothills of Pashan, ANP Privado is Pune's most uncompromising residential statement — designed for those who value silence as much as sight.
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://wa.me/918857090799?text=Hi%2C%20I'd%20like%20to%20schedule%20a%20private%20site%20visit%20for%20ANP%20Privado" 
-         target="_blank" rel="noopener" class="btn btn-primary">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Schedule My Site Visit
-      </a>
-      <a href="#story" class="btn btn-ghost">
-        Discover the Project
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-stats">
-    <div class="hero-stat-item">
-      <div class="stat-number">10</div>
-      <div class="stat-label">Acres</div>
-    </div>
-    <div class="hero-stat-item">
-      <div class="stat-number">9</div>
-      <div class="stat-label">Towers</div>
-    </div>
-    <div class="hero-stat-item">
-      <div class="stat-number">65<span style="font-size:0.6em;color:var(--color-gold);">+</span></div>
-      <div class="stat-label">Amenities</div>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================
-     TRUST STRIP
-     ================================================ -->
-<div class="trust-strip">
-  <div class="trust-strip-inner">
-    <div class="trust-item">
-      <span class="gold">●</span>
-      <strong>Tower E</strong>&nbsp;Now Open for Sale
-    </div>
-    <span class="trust-divider"></span>
-    <div class="trust-item">A project by <strong>ANP&nbsp;+&nbsp;Sunshine Developers</strong></div>
-    <span class="trust-divider"></span>
-    <div class="trust-item">MahaRERA&nbsp;<strong>PR1260002500840</strong></div>
-    <span class="trust-divider"></span>
-    <div class="trust-item"><strong>Show Flat Ready</strong>&nbsp;· Visit Today</div>
-  </div>
-</div>
-
-<!-- ================================================
-     STORY / POSITIONING
-     ================================================ -->
-<section class="story section" id="story">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-text reveal">
-        <span class="eyebrow">The Philosophy</span>
-        <h2 class="display-lg">In a world full of <span class="italic gold">crazes</span>, you want your own space.</h2>
-        <p class="body-lg">
-          Where Pashan Hill stands tall, sunlight embraces, and greenery shields — a sanctuary of rare privacy, where peace begins anew each morning.
-        </p>
-        <p class="body-lg">
-          Every residence at ANP Privado is corner-positioned. Every tower stands approximately two hundred feet from the next. Every ritual, from sunrise to silence, is yours alone.
-        </p>
-      </div>
-
-      <div class="story-visual reveal">
-        <!-- 
-          IMAGE REFERENCE:
-          Source: ANP_Privado_M_Brochure_V2.pdf — Page 1
-          Description: Editorial portrait of woman in flowing white silk dress, soft natural light,
-          serene expression, surrounded by ethereal greenery / mist. The brochure's signature
-          "privacy as feeling" image. Vertical composition (4:5 aspect ratio).
-          Recommended file: assets/story-privacy-portrait.jpg (1600x2000 minimum)
-        -->
-        <div class="story-visual-caption">
-          "Privacy of thoughts. Privacy of silence. Privacy of being."
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================
-     STATS BANNER (Anchoring + Authority)
-     ================================================ -->
-<section class="stats-banner">
-  <div class="stats-banner-inner">
-    <div class="stat-block reveal">
-      <div class="stat-num" data-count="10">10<span class="unit">acres</span></div>
-      <div class="stat-desc">Of Curated Land<br>In the Heart of Baner</div>
-    </div>
-    <div class="stat-block reveal">
-      <div class="stat-num" data-count="9">9<span class="unit">towers</span></div>
-      <div class="stat-desc">Up to 34 Floors<br>200 ft Inter-Tower Distance</div>
-    </div>
-    <div class="stat-block reveal">
-      <div class="stat-num" data-count="80">80<span class="unit">%</span></div>
-      <div class="stat-desc">Open Space<br>Reserved for Greenery</div>
-    </div>
-    <div class="stat-block reveal">
-      <div class="stat-num" data-count="50">50K<span class="unit">sqft</span></div>
-      <div class="stat-desc">Indoor Clubhouse<br>One of Pune's Largest</div>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================
-     LOCATION ADVANTAGE
-     ================================================ -->
-<section class="location section" id="location">
-  <div class="container">
-    <div class="location-header">
-      <div class="reveal">
-        <span class="eyebrow">The Address</span>
-        <h2 class="display-lg" style="margin-top: 1rem;">Baner, where the city's<br><span class="italic gold">energy meets quiet.</span></h2>
-      </div>
-      <div class="location-header-right reveal">
-        <p>Anchored on Pan Card Club Road in Pune's Western Corridor — surrounded by tree-lined streets, walking distance from Pashan Hill, minutes from every essential.</p>
-      </div>
-    </div>
-
-    <div class="location-grid">
-      <div class="location-cell reveal">
-        <div class="location-cell-cat">Healthcare</div>
-        <ul class="location-cell-list">
-          <li>Manipal Hospitals <span class="time">5 min</span></li>
-          <li>Jupiter Hospital <span class="time">5 min</span></li>
-          <li>Vitalife Healing Hands <span class="time">5 min</span></li>
-          <li>Ankura Hospital <span class="time">12 min</span></li>
-        </ul>
-      </div>
-      <div class="location-cell reveal">
-        <div class="location-cell-cat">Lifestyle</div>
-        <ul class="location-cell-list">
-          <li>Balewadi High Street <span class="time">7 min</span></li>
-          <li>Westend Mall, Aundh <span class="time">10 min</span></li>
-          <li>Phoenix Mall of the Millennium <span class="time">15 min</span></li>
-          <li>The Pavillion Mall <span class="time">20 min</span></li>
-        </ul>
-      </div>
-      <div class="location-cell reveal">
-        <div class="location-cell-cat">Education</div>
-        <ul class="location-cell-list">
-          <li>VIBGYOR High School <span class="time">4 min</span></li>
-          <li>Rabindranath Tagore School <span class="time">10 min</span></li>
-          <li>NICMAR <span class="time">10 min</span></li>
-          <li>Symbiosis Institutes <span class="time">15 min</span></li>
-        </ul>
-      </div>
-      <div class="location-cell reveal">
-        <div class="location-cell-cat">Work</div>
-        <ul class="location-cell-list">
-          <li>Balewadi IT Park <span class="time">5 min</span></li>
-          <li>ANP THINQ <span class="time">10 min</span></li>
-          <li>ICC Trade Tower, SB Road <span class="time">16 min</span></li>
-          <li>Hinjewadi IT Park <span class="time">18 min</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================
-     CINEMATIC CTA #1
-     ================================================ -->
-<section class="cta-cinematic section">
-  <div class="cta-cinematic-inner">
-    <span class="eyebrow">A Limited Invitation</span>
-    <h2 class="display-lg">Tower E is now open. <span class="italic">Limited residences remain.</span></h2>
-    <p class="body-lg">Pre-launch pricing is active for a limited window. Site visits are scheduled by appointment to preserve the privacy of every guest.</p>
-    <a href="https://wa.me/918857090799?text=Hi%2C%20I'm%20interested%20in%20Tower%20E%20at%20ANP%20Privado.%20Please%20share%20availability%20and%20pricing." 
-       target="_blank" rel="noopener" class="btn btn-primary">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Check Availability on WhatsApp
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__brand-mark">ANP</span>
+      <span class="nav__brand-name">PRIVADO</span>
     </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="https://wa.me/918857090799?text=Send%20me%20the%20ANP%20Privado%20master%20plan">Master Plan</a>
+      <a href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20clubhouse%20%26%20amenities%20details">Clubhouse</a>
+      <a href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20skydeck%20details">Skydeck</a>
+      <a href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20tower%20%26%20floor%20plans">Tower Plan</a>
+      <a href="https://wa.me/918857090799?text=Send%20me%20the%20full%20ANP%20Privado%20amenities%20list">Amenities</a>
+      <a href="https://wa.me/918857090799?text=Send%20me%20the%20ANP%20Privado%20e-brochure">E-Brochure</a>
+      <a href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20specifications">Specifications</a>
+      <a href="https://wa.me/918857090799?text=Send%20me%20the%20exact%20ANP%20Privado%20location">Location</a>
+    </nav>
+    <a class="nav__cta" href="https://wa.me/918857090799?text=I%20want%20to%20download%20the%20ANP%20Privado%20sample%20flat%20video.">Sample Flat Video</a>
+  </div>
+  <div class="nav__ticker">Marketed by PROPBILLION · Show Flat Ready · Baner, Pune</div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <img src="hero-1.webp" alt="ANP Privado — the skyline at Baner" onerror="this.classList.add('img--fail')" />
+    <div class="hero__scrim"></div>
+  </div>
+  <div class="hero__content">
+    <p class="eyebrow eyebrow--light">ANP Presents</p>
+    <h1 class="hero__title">An Abode of <em>Privacy.</em></h1>
+    <p class="hero__loc">Pan Card Club Road · Baner, Pune</p>
+    <p class="hero__config">3 &amp; 4 BHK All-Corner Residences<br /><em>200 ft Tower-to-Tower Spacing</em></p>
+    <ul class="hero__pills">
+      <li>10 Acres · 9 Towers · G+34</li>
+      <li>80% Open Space · 65+ Amenities</li>
+    </ul>
+    <a class="btn btn--gold hero__primary" href="#enquire">Get Priority Allocation &rarr;</a>
+    <p class="hero__sub">Starting ₹2.65 Cr* · Show Flat Ready · Limited Allocation</p>
+    <div class="hero__inline">
+      <a href="https://wa.me/918857090799?text=I'd%20like%20the%20ANP%20Privado%20brochure">Download Brochure</a>
+      <span>·</span>
+      <a href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20floor%20plans">Get Floor Plans</a>
+      <span>·</span>
+      <a href="https://wa.me/918857090799?text=I%20want%20to%20book%20an%20ANP%20Privado%20site%20visit">Book Site Visit</a>
+    </div>
   </div>
 </section>
 
-<!-- ================================================
-     AMENITIES
-     ================================================ -->
-<section class="amenities section" id="amenities">
+<!-- ============ CONFIGURATION / PRICING ============ -->
+<section class="config" id="pricing">
   <div class="container">
-    <div class="amenities-intro reveal">
-      <span class="eyebrow">65+ Amenities</span>
-      <h2 class="display-lg">Where elevation becomes <span class="italic gold">an attitude.</span></h2>
-      <p class="body-lg">A 50,000 sq.ft. indoor clubhouse. Three pools. A multi-level adventure forest. A canopy walk between towers. Every craft, considered.</p>
-    </div>
+    <p class="eyebrow">3 &amp; 4 BHK All-Corner Residences</p>
+    <h2 class="section-title">Every residence, <em>a corner of its own.</em></h2>
+    <p class="section-sub">Super-sized layouts. En-suite washrooms in every bedroom, plus a powder room in every home.</p>
 
-    <div class="amenities-grid">
-      <!-- Sport & Active -->
-      <div class="amenity-card reveal">
-        <div class="amenity-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="24" cy="24" r="18"/>
-            <path d="M24 6v36M6 24h36M11 11l26 26M37 11L11 37"/>
-          </svg>
-        </div>
-        <h3 class="amenity-title">Sport &amp; Active</h3>
-        <p class="amenity-list">Pickleball arena · Futsal court · Half-court hoops · Cricket simulator · Open-air fitness · Jogging track · Box cricket · 2× Squash courts · 2× Badminton courts</p>
-      </div>
+    <div class="config__grid">
+      <article class="pcard">
+        <span class="pcard__type">3 BHK</span>
+        <span class="pcard__area">1309<small>sqft</small></span>
+        <span class="pcard__label">Carpet Area</span>
+        <span class="pcard__price-label">Starting</span>
+        <span class="pcard__price">₹2.65 Cr*</span>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Unlock%20best%20price%20for%203%20BHK%201309%20sqft%20ANP%20Privado">Unlock Best Price</a>
+      </article>
 
-      <!-- Aquatic -->
-      <div class="amenity-card reveal">
-        <div class="amenity-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 32c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/>
-            <path d="M4 39c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/>
-            <circle cx="20" cy="14" r="4"/>
-            <path d="M24 18l8 8"/>
-          </svg>
-        </div>
-        <h3 class="amenity-title">Aquatic Realms</h3>
-        <p class="amenity-list">Vitality pool · Lazy river · Swimming arena · Toddlers' splash pool · Sunken wet lounge with pressure jets · All-season indoor heated pool · Pool lounge decks</p>
-      </div>
+      <article class="pcard">
+        <span class="pcard__type">3 BHK</span>
+        <span class="pcard__area">1489<small>sqft</small></span>
+        <span class="pcard__label">Carpet Area</span>
+        <span class="pcard__price-label">Starting</span>
+        <span class="pcard__price">₹3.00 Cr*</span>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Unlock%20best%20price%20for%203%20BHK%201489%20sqft%20ANP%20Privado">Unlock Best Price</a>
+      </article>
 
-      <!-- Wellness -->
-      <div class="amenity-card reveal">
-        <div class="amenity-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 8c-8 0-14 6-14 14 0 8 14 18 14 18s14-10 14-18c0-8-6-14-14-14z"/>
-            <circle cx="24" cy="22" r="4"/>
-          </svg>
-        </div>
-        <h3 class="amenity-title">Wellness Retreats</h3>
-        <p class="amenity-list">Aroma garden · Zen court · Coffee deck · Reading corners · Seniors' lounge · Trellis shade · Parents' lounge · Outdoor co-working station</p>
-      </div>
+      <article class="pcard">
+        <span class="pcard__type">4 BHK</span>
+        <span class="pcard__area">1855<small>sqft</small></span>
+        <span class="pcard__label">Carpet Area</span>
+        <span class="pcard__price-label">Starting</span>
+        <span class="pcard__price">₹4.05 Cr*</span>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Unlock%20best%20price%20for%204%20BHK%201855%20sqft%20ANP%20Privado">Unlock Best Price</a>
+      </article>
 
-      <!-- Nature -->
-      <div class="amenity-card reveal">
-        <div class="amenity-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 4v40M24 14c-6 0-10 4-10 10 0-6 4-10 10-10zM24 14c6 0 10 4 10 10 0-6-4-10-10-10zM24 26c-4 0-8 3-8 8 0-5 4-8 8-8zM24 26c4 0 8 3 8 8 0-5-4-8-8-8z"/>
-          </svg>
-        </div>
-        <h3 class="amenity-title">Nature &amp; Forest</h3>
-        <p class="amenity-list">Miyawaki Forest · Multi-level adventure forest · Canopy walk between towers · Pet park · Butterfly garden lounge · Heritage orchard grove · Native fruit-bearing trees</p>
-      </div>
+      <article class="pcard">
+        <span class="pcard__type">4 BHK</span>
+        <span class="pcard__area">2306<small>sqft</small></span>
+        <span class="pcard__label">Carpet Area</span>
+        <span class="pcard__price-label">Starting</span>
+        <span class="pcard__price">₹5.05 Cr*</span>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Unlock%20best%20price%20for%204%20BHK%202306%20sqft%20ANP%20Privado">Unlock Best Price</a>
+      </article>
 
-      <!-- Family -->
-      <div class="amenity-card reveal">
-        <div class="amenity-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="16" cy="14" r="5"/>
-            <circle cx="32" cy="14" r="5"/>
-            <path d="M6 38c0-6 4-10 10-10s10 4 10 10M22 38c0-6 4-10 10-10s10 4 10 10"/>
-          </svg>
-        </div>
-        <h3 class="amenity-title">Family Spaces</h3>
-        <p class="amenity-list">Children's interactive play areas · Toddlers' cove · Tricycle track · Kids' play area · Indoor crèche · Adventure playground with mounds and tunnels · Movable stage</p>
-      </div>
+      <article class="pcard">
+        <span class="pcard__type">4 BHK · Type 03</span>
+        <span class="pcard__area">2228<small>sqft</small></span>
+        <span class="pcard__label">Carpet Area</span>
+        <span class="pcard__price-label">Pricing</span>
+        <span class="pcard__price">On Request</span>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Unlock%20best%20price%20for%204%20BHK%20Type%2003%202228%20sqft%20ANP%20Privado">Unlock Best Price</a>
+      </article>
 
-      <!-- Clubhouse -->
-      <div class="amenity-card reveal">
-        <div class="amenity-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 42V20l18-12 18 12v22"/>
-            <path d="M16 42V28h16v14"/>
-            <path d="M22 28v6M26 28v6"/>
-          </svg>
-        </div>
-        <h3 class="amenity-title">The Clubhouse</h3>
-        <p class="amenity-list">50,000 sq.ft. indoor space · Regal banquet hall · Private luxe theatre · Gourmet kitchen · Alfresco lawn · Elite fitness studio · Games lounge · Professionals' conclave</p>
-      </div>
+      <article class="pcard pcard--signature">
+        <span class="pcard__type">4 BHK · Signature</span>
+        <span class="pcard__area">3000<small>sqft</small></span>
+        <span class="pcard__label">Carpet · 4200 sqft Saleable · Tower 1</span>
+        <span class="pcard__price-label">Pricing</span>
+        <span class="pcard__price">On Request</span>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=I%20want%20Signature%20pricing%20for%20the%204%20BHK%203000%20sqft%20Tower%201%20residence%20ANP%20Privado">Request Signature Pricing</a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ================================================
-     FLOOR PLAN SECTION (Locked)
-     ================================================ -->
-<section class="floorplans section" id="floorplans">
+<!-- ============ SIGNATURE BAND (was Sky Residences) ============ -->
+<section class="band">
+  <div class="band__media">
+    <img src="skydeck.webp" alt="Private skydeck overlooking Pashan Hill" onerror="this.classList.add('img--fail')" />
+    <div class="band__scrim"></div>
+  </div>
+  <div class="container band__content">
+    <p class="eyebrow eyebrow--light">The Private Skydeck</p>
+    <h3 class="band__title">Roughly 200 ft of sky <em>between you and your neighbour.</em></h3>
+    <p class="band__meta">Pashan Hill Views · 80% Open Space</p>
+    <p class="band__desc">Private skydecks overlooking the hills. An expansive gap of approximately 200 ft from one balcony to another — privacy engineered into the very geometry of the towers.</p>
+    <span class="band__price-label">Starting</span>
+    <span class="band__price">₹2.65 Cr*</span>
+    <div class="band__ctas">
+      <a class="btn btn--gold" href="https://wa.me/918857090799?text=I%20want%20the%20ANP%20Privado%20residence%20%26%20pricing%20deck">View All Residences &rarr;</a>
+      <a class="btn btn--line-light" href="https://wa.me/918857090799?text=Send%20me%20the%20complete%20ANP%20Privado%20cost%20sheet">Download Full Cost Sheet &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOOR PLANS ============ -->
+<section class="plans" id="plans">
   <div class="container">
-    <div class="floorplans-header">
-      <div class="reveal">
-        <span class="eyebrow">Residences</span>
-        <h2 class="display-lg" style="margin-top: 1rem;">Super-sized layouts.<br><span class="italic gold">Above-standard ceilings.</span></h2>
-      </div>
-      <div class="floorplans-header-right reveal">
-        <p>3400mm floor-to-floor height. Imported marble across all rooms. En suite washrooms. Powder rooms in every apartment. The full plans are unlocked privately on WhatsApp.</p>
-      </div>
+    <p class="eyebrow">Residence Plans · Configuration Details</p>
+    <h2 class="section-title">Every square foot, <em>considered.</em></h2>
+    <p class="section-sub">All-corner planning, cross-ventilated and light-filled. Tap any plan to receive the full file.</p>
+
+    <div class="plans__grid">
+      <article class="plan">
+        <div class="plan__img"><img src="plan-3bhk-1309.webp" alt="3 BHK Type 01 1309 sqft floor plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%203%20BHK%20Type%2001%201309%20sqft%20floor%20plan%20ANP%20Privado">Download Plan &rarr;</a>
+        <span class="plan__tag">Residence</span>
+        <span class="plan__name">3 BHK Type 01 · 1309 sqft</span>
+      </article>
+
+      <article class="plan">
+        <div class="plan__img"><img src="plan-3bhk-1489.webp" alt="3 BHK Type 02 1489 sqft floor plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%203%20BHK%20Type%2002%201489%20sqft%20floor%20plan%20ANP%20Privado">Download Plan &rarr;</a>
+        <span class="plan__tag">Residence</span>
+        <span class="plan__name">3 BHK Type 02 · 1489 sqft</span>
+      </article>
+
+      <article class="plan">
+        <div class="plan__img"><img src="plan-3bhk-1276.webp" alt="3 BHK Type 03 1276 sqft floor plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%203%20BHK%20Type%2003%201276%20sqft%20floor%20plan%20ANP%20Privado">Download Plan &rarr;</a>
+        <span class="plan__tag">Residence</span>
+        <span class="plan__name">3 BHK Type 03 · 1276 sqft</span>
+      </article>
+
+      <article class="plan">
+        <div class="plan__img"><img src="plan-4bhk-1855.webp" alt="4 BHK Type 01 1855 sqft floor plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%204%20BHK%20Type%2001%201855%20sqft%20floor%20plan%20ANP%20Privado">Download Plan &rarr;</a>
+        <span class="plan__tag">Residence</span>
+        <span class="plan__name">4 BHK Type 01 · 1855 sqft</span>
+      </article>
+
+      <article class="plan">
+        <div class="plan__img"><img src="plan-4bhk-2306.webp" alt="4 BHK Type 02 2306 sqft floor plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%204%20BHK%20Type%2002%202306%20sqft%20floor%20plan%20ANP%20Privado">Download Plan &rarr;</a>
+        <span class="plan__tag">Residence</span>
+        <span class="plan__name">4 BHK Type 02 · 2306 sqft</span>
+      </article>
+
+      <article class="plan plan--signature">
+        <div class="plan__img"><img src="plan-4bhk-3000.webp" alt="4 BHK Signature Type 05 3000 sqft Tower 1 floor plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%204%20BHK%20Signature%203000%20sqft%20Tower%201%20floor%20plan%20ANP%20Privado">Download Plan &rarr;</a>
+        <span class="plan__tag">Signature · Tower 1</span>
+        <span class="plan__name">4 BHK Type 05 · 3000 sqft</span>
+      </article>
     </div>
 
-    <div class="floorplans-grid">
-      <!-- 3BHK -->
-      <div class="fp-card locked reveal">
-        <div class="fp-card-visual">
-          <div class="fp-locked-overlay">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <rect x="5" y="11" width="14" height="10" rx="1"/>
-              <path d="M8 11V7a4 4 0 018 0v4"/>
-            </svg>
-            <div class="lock-text">"Detailed plan available privately"</div>
-          </div>
-        </div>
-        <div class="fp-card-body">
-          <div class="fp-card-tag">Most In Demand</div>
-          <div class="fp-card-title">3 BHK · Type 02</div>
-          <div class="fp-card-meta">
-            <span><strong>1489</strong> sqft carpet</span>
-            <span style="color: var(--color-stone-light);">·</span>
-            <span><strong>Walk-in wardrobe</strong></span>
-          </div>
-          <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20floor%20plan%20of%203BHK%20Type%2002%20at%20ANP%20Privado." 
-             target="_blank" rel="noopener" class="fp-unlock-btn">
-            Unlock Floor Plan
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- 4BHK -->
-      <div class="fp-card locked reveal">
-        <div class="fp-card-visual">
-          <div class="fp-locked-overlay">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <rect x="5" y="11" width="14" height="10" rx="1"/>
-              <path d="M8 11V7a4 4 0 018 0v4"/>
-            </svg>
-            <div class="lock-text">"Available on private request"</div>
-          </div>
-        </div>
-        <div class="fp-card-body">
-          <div class="fp-card-tag">Tower 1 Premium</div>
-          <div class="fp-card-title">4 BHK · Type 05</div>
-          <div class="fp-card-meta">
-            <span><strong>3000</strong> sqft carpet</span>
-            <span style="color: var(--color-stone-light);">·</span>
-            <span><strong>Family Room</strong></span>
-          </div>
-          <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20floor%20plan%20of%204BHK%20Type%2005%20at%20ANP%20Privado." 
-             target="_blank" rel="noopener" class="fp-unlock-btn">
-            Unlock Floor Plan
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- 5BHK -->
-      <div class="fp-card locked reveal">
-        <div class="fp-card-visual">
-          <div class="fp-locked-overlay">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <rect x="5" y="11" width="14" height="10" rx="1"/>
-              <path d="M8 11V7a4 4 0 018 0v4"/>
-            </svg>
-            <div class="lock-text">"By appointment only"</div>
-          </div>
-        </div>
-        <div class="fp-card-body">
-          <div class="fp-card-tag">Ultra Luxury</div>
-          <div class="fp-card-title">5 BHK · Sky Residence</div>
-          <div class="fp-card-meta">
-            <span><strong>4686</strong> sqft carpet</span>
-            <span style="color: var(--color-stone-light);">·</span>
-            <span><strong>Home Theatre</strong></span>
-          </div>
-          <a href="https://wa.me/918857090799?text=Hi%2C%20I'm%20interested%20in%20the%205BHK%20Sky%20Residence%20at%20ANP%20Privado.%20Please%20share%20floor%20plan%20and%20pricing." 
-             target="_blank" rel="noopener" class="fp-unlock-btn">
-            Request Private Plan
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
+    <div class="plans__all">
+      <h4>Get every floor plan, <em>in one share.</em></h4>
+      <p>Receive the complete plan set, cost sheet and live inventory on WhatsApp within 60 seconds.</p>
+      <div class="plans__all-ctas">
+        <a class="btn btn--gold" href="https://wa.me/918857090799?text=Send%20me%20all%20ANP%20Privado%20floor%20plans%20and%20cost%20sheet">Get Complete Set &rarr;</a>
+        <a class="btn btn--line" href="https://wa.me/918857090799?text=Send%20me%20the%20complete%20ANP%20Privado%20cost%20sheet%20and%20floor%20plans">Download Cost Sheet &amp; Plans &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================================================
-     PRICING (Anchored — Isaac Rudansky Section 3)
-     ================================================ -->
-<section class="pricing section" id="pricing">
+<!-- ============ FIRST GLIMPSE GALLERY ============ -->
+<section class="glimpse" id="gallery">
   <div class="container">
-    <div style="max-width: 750px;">
-      <span class="eyebrow reveal">Pre-Launch Pricing</span>
-      <h2 class="display-lg reveal" style="margin-top: 1rem;">A residence here begins where most luxury projects <span class="italic gold">end.</span></h2>
-      <p class="body-lg reveal" style="color: var(--color-stone); margin-top: 1.5rem; max-width: 600px;">
-        Indicative starting prices. Final pricing depends on tower, floor, configuration, and view orientation. Detailed cost sheets are shared on WhatsApp.
-      </p>
-    </div>
-
-    <div class="pricing-grid">
-      <div class="pricing-card reveal">
-        <div class="pricing-card-tag">3 Bedroom</div>
-        <div class="pricing-card-config">3 BHK Residences</div>
-        <div class="pricing-card-area">1309 — 1489 sqft carpet</div>
-        <div class="price-display">
-          <div class="price-from">Starting from</div>
-          <div class="price-amount">
-            <span class="price-currency">₹</span>2.65<span style="font-size: 0.4em; margin-left: 0.3rem; color: var(--color-stone);">Cr*</span>
-          </div>
-          <div class="price-meta">All Inclusive · Indicative</div>
-        </div>
-        <ul class="pricing-features">
-          <li>3400mm floor-to-floor ceiling height</li>
-          <li>Imported marble throughout the residence</li>
-          <li>Hans Grohe & Duravit fittings</li>
-          <li>Provision for centralised VRV AC</li>
-        </ul>
-        <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20cost%20sheet%20for%20the%203BHK%20at%20ANP%20Privado." 
-           target="_blank" rel="noopener" class="btn btn-primary">
-          Get Detailed Cost Sheet
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-
-      <div class="pricing-card reveal">
-        <div class="pricing-card-tag">4 Bedroom</div>
-        <div class="pricing-card-config">4 BHK Residences</div>
-        <div class="pricing-card-area">1855 — 3000 sqft carpet</div>
-        <div class="price-display">
-          <div class="price-from">Starting from</div>
-          <div class="price-amount">
-            <span class="price-currency">₹</span>4.05<span style="font-size: 0.4em; margin-left: 0.3rem; color: var(--color-stone);">Cr*</span>
-          </div>
-          <div class="price-meta">All Inclusive · Indicative</div>
-        </div>
-        <ul class="pricing-features">
-          <li>Servant room + utility provision</li>
-          <li>Walk-in wardrobes &amp; en suite washrooms</li>
-          <li>Family room + sit-out balcony</li>
-          <li>Multiple corner residences with hill view</li>
-        </ul>
-        <a href="https://wa.me/918857090799?text=Hi%2C%20please%20send%20me%20the%20detailed%20cost%20sheet%20for%20the%204BHK%20at%20ANP%20Privado." 
-           target="_blank" rel="noopener" class="btn btn-primary">
-          Get Detailed Cost Sheet
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <p style="margin-top: 3rem; font-size: 0.78rem; color: var(--color-stone); letter-spacing: 0.05em; max-width: 700px;">
-      *All Inclusive prices include GST and applicable charges. Final pricing varies by floor, view orientation, and tower selection. Prices are subject to revision without notice.
-    </p>
+    <p class="eyebrow">A First Glimpse</p>
+    <h2 class="section-title">Ten acres. <em>One sanctuary.</em></h2>
+    <p class="section-sub glimpse__lead">A low-density world of 9 towers, 80% open space and a layered natural landscape — the Miyawaki greenwoods, canopy walks, a 105&nbsp;m lazy river and a private skydeck above the hills.</p>
+    <span class="glimpse__sublabel">The Project</span>
   </div>
-</section>
 
-<!-- ================================================
-     PROCESS — Three Steps to Booking
-     ================================================ -->
-<section class="process section">
+  <div class="rail" data-rail>
+    <div class="rail__track">
+      <figure class="rail__item"><img src="gallery-1.webp" alt="The podium" onerror="this.classList.add('img--fail')" /><figcaption>The Podium</figcaption></figure>
+      <figure class="rail__item"><img src="gallery-2.webp" alt="The clubhouse" onerror="this.classList.add('img--fail')" /><figcaption>The Clubhouse</figcaption></figure>
+      <figure class="rail__item"><img src="gallery-3.webp" alt="The lazy river" onerror="this.classList.add('img--fail')" /><figcaption>The Water</figcaption></figure>
+      <figure class="rail__item"><img src="gallery-4.webp" alt="The gardens" onerror="this.classList.add('img--fail')" /><figcaption>The Gardens</figcaption></figure>
+      <figure class="rail__item"><img src="gallery-5.webp" alt="Golden hour over the towers" onerror="this.classList.add('img--fail')" /><figcaption>The Hour</figcaption></figure>
+      <figure class="rail__item"><img src="gallery-6.webp" alt="The architecture" onerror="this.classList.add('img--fail')" /><figcaption>The Architecture</figcaption></figure>
+      <figure class="rail__item"><img src="gallery-7.webp" alt="The canopy walk" onerror="this.classList.add('img--fail')" /><figcaption>The Canopy</figcaption></figure>
+    </div>
+  </div>
   <div class="container">
-    <div class="process-intro reveal">
-      <span class="eyebrow">The Visit, Curated</span>
-      <h2 class="display-lg">From <span class="italic gold">enquiry</span> to address.</h2>
-      <p class="body-lg">A simple, considered three-step path. Designed to respect your time and your decision.</p>
-    </div>
+    <p class="rail__hint">Swipe to explore &rarr;</p>
+    <div class="center-cta"><a class="btn btn--gold" href="https://wa.me/918857090799?text=Send%20me%20the%20ANP%20Privado%20project%20walkthrough">Request Project Walkthrough &rarr;</a></div>
+  </div>
+</section>
 
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="process-step-num">01</div>
-        <h3 class="process-step-title">Enquire on WhatsApp</h3>
-        <p class="process-step-desc">Share your preferred configuration. We send the cost sheet, floor plan, and possession timeline within hours — directly on WhatsApp.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="process-step-num">02</div>
-        <h3 class="process-step-title">Private Site Visit</h3>
-        <p class="process-step-desc">Visit the show flat at your convenience. Walk the 10 acres. See the 200 ft inter-tower gap. Experience the silence first-hand. We arrange transport on request.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="process-step-num">03</div>
-        <h3 class="process-step-title">Reserve Your Residence</h3>
-        <p class="process-step-desc">Choose your tower, floor, and view. Lock pre-launch pricing with a refundable token. Bank approvals from SBI, HDFC, ICICI, Axis are in place.</p>
-      </div>
+<!-- ============ CLUBHOUSE / PODIUM AMENITIES GALLERY ============ -->
+<section class="glimpse glimpse--alt">
+  <div class="container">
+    <p class="eyebrow">The 50,000 Sq.ft Clubhouse &amp; Podium</p>
+    <h2 class="section-title">Indulgence, <em>elevated.</em></h2>
+  </div>
+
+  <div class="rail" data-rail>
+    <div class="rail__track">
+      <figure class="rail__item"><img src="amenity-1.webp" alt="Temperature-controlled indoor pool" onerror="this.classList.add('img--fail')" /><figcaption>All-Season Indoor Pool</figcaption></figure>
+      <figure class="rail__item"><img src="amenity-2.webp" alt="105m lazy river" onerror="this.classList.add('img--fail')" /><figcaption>105 m Lazy River</figcaption></figure>
+      <figure class="rail__item"><img src="amenity-3.webp" alt="Private luxe theatre" onerror="this.classList.add('img--fail')" /><figcaption>Private Theatre</figcaption></figure>
+      <figure class="rail__item"><img src="amenity-4.webp" alt="Regal banquet hall" onerror="this.classList.add('img--fail')" /><figcaption>Banquet Hall</figcaption></figure>
+      <figure class="rail__item"><img src="amenity-5.webp" alt="Elite fitness studio" onerror="this.classList.add('img--fail')" /><figcaption>Fitness Studio</figcaption></figure>
+      <figure class="rail__item"><img src="amenity-6.webp" alt="Champion's arena - squash and badminton" onerror="this.classList.add('img--fail')" /><figcaption>Champion's Arena</figcaption></figure>
+    </div>
+  </div>
+  <div class="container">
+    <p class="rail__hint">Swipe to explore &rarr;</p>
+    <div class="center-cta"><a class="btn btn--gold" href="https://wa.me/918857090799?text=Send%20me%20the%20ANP%20Privado%20clubhouse%20%26%20amenities%20deck">Explore Amenities &rarr;</a></div>
+  </div>
+</section>
+
+<!-- ============ BLUEPRINT ============ -->
+<section class="blueprint" id="masterplan">
+  <div class="container">
+    <p class="eyebrow">The Blueprint</p>
+    <h2 class="section-title">Master Plan. Tower Plan. Refuge Floors.</h2>
+    <div class="blueprint__grid">
+      <article class="bp">
+        <div class="bp__img"><img src="masterplan.webp" alt="ANP Privado detailed master plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%20ANP%20Privado%20detailed%20master%20plan">Download Master Plan &rarr;</a>
+        <span class="bp__tag">Site Layout</span>
+        <span class="bp__name">Detailed Master Plan</span>
+      </article>
+      <article class="bp">
+        <div class="bp__img"><img src="tower-plan.webp" alt="ANP Privado tower wise floor plans" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20tower%20wise%20floor%20plans">Download Tower Plan &rarr;</a>
+        <span class="bp__tag">Towers 1 to 9</span>
+        <span class="bp__name">Tower Wise Floor Plans</span>
+      </article>
+      <article class="bp">
+        <div class="bp__img"><img src="refuge-plan.webp" alt="ANP Privado refuge floor plans" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20refuge%20floor%20plans">Download Refuge Plans &rarr;</a>
+        <span class="bp__tag">Safety</span>
+        <span class="bp__name">All Towers Refuge Plans</span>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ================================================
-     FINAL CTA
-     ================================================ -->
-<section class="final-cta">
-  <div class="final-cta-inner">
-    <span class="eyebrow gold">A Quiet Invitation</span>
-    <h2 class="display-xl">Your next chapter rises here. <span class="italic">In the heart of privacy.</span></h2>
-    <p class="body-lg">Tower E is open. Pre-launch pricing is active. The show flat is ready for visit.<br>Send a message. We'll handle the rest.</p>
-    <div class="final-cta-actions">
-      <a href="https://wa.me/918857090799?text=Hi%2C%20I'd%20like%20to%20book%20a%20site%20visit%20for%20ANP%20Privado%2C%20Baner.%20Please%20share%20the%20cost%20sheet%20and%20available%20slots." 
-         target="_blank" rel="noopener" class="btn btn-primary">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Schedule My Site Visit
-      </a>
-      <a href="tel:+918857090799" class="btn btn-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Or Call Now
-      </a>
-    </div>
-    <p class="final-cta-fineprint">+91 8857090799 · Reply within 2 hours · No spam, ever.</p>
+<!-- ============ CLUBHOUSE FEATURE (was Sky Club) ============ -->
+<section class="feature" id="clubhouse">
+  <div class="container">
+    <p class="eyebrow">The Grand Clubhouse</p>
+    <h2 class="section-title">A 50,000 sq.ft clubhouse — <em>another address within your address.</em></h2>
+    <p class="section-sub">All-season temperature-controlled pool · private luxe theatre · regal banquet · champion's arena · elite fitness studio.</p>
+    <div class="feature__img"><img src="clubhouse.webp" alt="ANP Privado grand clubhouse" onerror="this.classList.add('img--fail')" /></div>
+    <div class="center-cta"><a class="btn btn--gold" href="https://wa.me/918857090799?text=Send%20me%20the%20ANP%20Privado%20clubhouse%20deck">Get Clubhouse Plan &rarr;</a></div>
   </div>
 </section>
 
-<!-- ================================================
-     FOOTER
-     ================================================ -->
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="container">
+    <p class="eyebrow">Presenting Our Landmark Address</p>
+    <h2 class="section-title">A 10-acre <em>low-density township.</em></h2>
+    <p class="section-sub">Private · Open · Complete</p>
+    <div class="stats__grid">
+      <div class="stat"><span class="stat__num">10</span><span class="stat__unit">Acres</span><span class="stat__cap">Land Parcel</span></div>
+      <div class="stat"><span class="stat__num">9</span><span class="stat__unit">Towers</span><span class="stat__cap">G+34 Floors</span></div>
+      <div class="stat"><span class="stat__num">80%</span><span class="stat__unit">Open Space</span><span class="stat__cap">Low Density</span></div>
+      <div class="stat"><span class="stat__num">50,000</span><span class="stat__unit">sq.ft</span><span class="stat__cap">Grand Clubhouse</span></div>
+      <div class="stat"><span class="stat__num">65+</span><span class="stat__unit">Amenities</span><span class="stat__cap">Curated</span></div>
+      <div class="stat"><span class="stat__num">200</span><span class="stat__unit">ft Gap</span><span class="stat__cap">Tower-to-Tower</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES (Finest Inventory) ============ -->
+<section class="finest">
+  <div class="container">
+    <p class="eyebrow">The Finest of Privado</p>
+    <h2 class="section-title">On all <em>fronts.</em></h2>
+    <div class="finest__grid">
+      <article class="ff">
+        <h3>Hill &amp; Skyline Views</h3>
+        <p>Framed by Pashan Hill. A private skydeck and an expansive ~200 ft gap between towers — uninterrupted horizons from every corner residence.</p>
+      </article>
+      <article class="ff">
+        <h3>All-Corner Layouts</h3>
+        <p>Super-sized 3 &amp; 4 BHK residences. Every bedroom with an en-suite washroom, plus a powder room in every home and above-standard floor heights.</p>
+      </article>
+      <article class="ff">
+        <h3>80% Open Space</h3>
+        <p>Low-density living across 10 acres — Miyawaki greenwoods, canopy walks, a 105 m lazy river and a layered natural landscape that simply surrounds you.</p>
+      </article>
+      <article class="ff">
+        <h3>Invisible Luxury</h3>
+        <p>A-class Aluform RCC, 3400 mm floor-to-floor height, imported marble flooring, Geberit concealed plumbing, Hansgrohe &amp; Duravit fittings.</p>
+      </article>
+      <article class="ff">
+        <h3>50,000 sq.ft Clubhouse</h3>
+        <p>An all-season pool, private theatre, regal banquet, champion's arena and elite fitness studio — across 65+ curated wellness, leisure and recreation amenities.</p>
+      </article>
+      <article class="ff">
+        <h3>Smart, Secure Living</h3>
+        <p>IoT power monitoring, VRV provision, MyGate app intercom, video door phone, lobby access control and CCTV across all common areas.</p>
+      </article>
+    </div>
+    <p class="finest__note">Crafted as a low-density sanctuary on Pan Card Club Road — landscaping by Singapore-based architects, every detail engineered for privacy.</p>
+    <div class="finest__band">Priority Allocation Access · Limited Launch Inventory · First Access for Pre-Registered Buyers</div>
+  </div>
+</section>
+
+<!-- ============ CONNECTIVITY ============ -->
+<section class="connect" id="connectivity">
+  <div class="container">
+    <p class="eyebrow">Superior Connectivity · Supreme Address</p>
+    <h2 class="section-title">Live near it all. <em>Untouched by it all.</em></h2>
+    <div class="connect__grid">
+      <div class="conn"><span class="conn__d">5 min</span><span class="conn__p">Balewadi IT Park</span></div>
+      <div class="conn"><span class="conn__d">5 min</span><span class="conn__p">Manipal Hospital, Baner</span></div>
+      <div class="conn"><span class="conn__d">5 min</span><span class="conn__p">Jupiter Hospital, Baner</span></div>
+      <div class="conn"><span class="conn__d">7 min</span><span class="conn__p">Balewadi High Street</span></div>
+      <div class="conn"><span class="conn__d">10 min</span><span class="conn__p">Westend Mall, Aundh</span></div>
+      <div class="conn"><span class="conn__d">10 min</span><span class="conn__p">ANP THINQ</span></div>
+      <div class="conn"><span class="conn__d">15 min</span><span class="conn__p">Phoenix Mall of the Millennium</span></div>
+      <div class="conn"><span class="conn__d">15 min</span><span class="conn__p">Symbiosis Institutes</span></div>
+      <div class="conn"><span class="conn__d">18 min</span><span class="conn__p">Hinjewadi IT Park</span></div>
+      <div class="conn"><span class="conn__d">20 min</span><span class="conn__p">The Pavillion Mall</span></div>
+    </div>
+    <ul class="connect__notes">
+      <li>Anchored on Pan Card Club Road, off Baner Road and the Mumbai–Bangalore Highway.</li>
+      <li>In the vicinity: fine dining &amp; high streets · premium schools &amp; institutes · world-class healthcare · the Western Pune IT corridor.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ DOCUMENTS ============ -->
+<section class="docs">
+  <div class="container">
+    <p class="eyebrow">Documents</p>
+    <h2 class="section-title">Everything you need, <em>privately delivered.</em></h2>
+    <div class="docs__grid">
+      <article class="bp">
+        <div class="bp__img"><img src="inventory.webp" alt="Live inventory availability" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20live%20inventory%20availability">Download Inventory &rarr;</a>
+        <span class="bp__tag">Live Availability</span>
+        <span class="bp__name">Unit Inventory</span>
+      </article>
+      <article class="bp">
+        <div class="bp__img"><img src="specifications.webp" alt="Home specifications" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20specifications">Download Specifications &rarr;</a>
+        <span class="bp__tag">Finishes &amp; Fittings</span>
+        <span class="bp__name">Home Specifications</span>
+      </article>
+      <article class="bp">
+        <div class="bp__img"><img src="costsheet.webp" alt="Cost sheet and payment plan" onerror="this.classList.add('img--fail')" /></div>
+        <a class="btn btn--ghost" href="https://wa.me/918857090799?text=Send%20me%20the%20complete%20ANP%20Privado%20cost%20sheet%20and%20payment%20plan">Download Cost Sheet &rarr;</a>
+        <span class="bp__tag">All Units · Payment Plan</span>
+        <span class="bp__name">Cost Sheet</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUMMARY ============ -->
+<section class="summary">
+  <div class="container">
+    <p class="eyebrow">Private. Open. Complete.</p>
+    <h2 class="section-title">A rare blend of privacy, openness and indulgence — <em>under one signature.</em></h2>
+    <ul class="summary__list">
+      <li>10 acres · 9 towers · 80% open space</li>
+      <li>All-corner 3 &amp; 4 BHK residences · Pashan Hill views</li>
+      <li>By ANP × Sunshine · MahaRERA registered · landscaping by Singapore-based architects</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ VIDEO CONSULTATION ============ -->
+<section class="video">
+  <div class="container">
+    <p class="eyebrow">Private Consultation</p>
+    <h3 class="video__title">Not in Pune? Let's meet <em>over a video call.</em></h3>
+    <div class="video__ctas">
+      <a class="btn btn--gold" href="https://wa.me/918857090799?text=I%20want%20to%20arrange%20a%20video%20conference%20for%20ANP%20Privado.">Arrange Video Conference &rarr;</a>
+      <a class="btn btn--line" href="https://wa.me/918857090799?text=Send%20me%20an%20ANP%20Privado%20walkthrough%20video">Request Walkthrough Video</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADDRESS / MAP ============ -->
+<section class="address" id="location">
+  <div class="container">
+    <p class="eyebrow">The Address</p>
+    <h2 class="section-title">Find us on Pan Card Club Road, Baner.</h2>
+    <p class="address__desc">Sr. No. 16, Pan Card Club Road, Baner, Pune 411045. Minutes from Balewadi High Street, the IT corridor and the Mumbai–Bangalore Highway — yet rooted in 10 acres of calm beneath Pashan Hill.</p>
+    <div class="address__map">
+      <iframe
+        title="ANP Privado location map"
+        src="https://maps.google.com/maps?q=ANP%20Privado%20Pan%20Card%20Club%20Road%20Baner%20Pune&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="address__ctas">
+      <a class="btn btn--gold" href="https://maps.app.goo.gl/JvwX6uWirRce3Wto7" target="_blank" rel="noopener">Get Exact Location &rarr;</a>
+      <a class="btn btn--line" href="https://wa.me/918857090799?text=I%20want%20to%20schedule%20a%20site%20visit%20at%20ANP%20Privado">Schedule Site Visit</a>
+      <a class="btn btn--line" href="https://wa.me/918857090799?text=WhatsApp%20me%20directions%20to%20ANP%20Privado">WhatsApp for Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT DEVELOPER ============ -->
+<section class="about">
+  <div class="container">
+    <p class="eyebrow">Built For a Select Few</p>
+    <h2 class="section-title">About ANP &amp; Sunshine.</h2>
+    <p class="about__p">ANP Privado is a project by ANP in association with Sunshine Developers — names already woven into Baner's western corridor through addresses such as ANP One on Balewadi High Street and ANP THINQ. Privado continues that intent: low-density, design-led living where space, scale and refinement meet seamlessly.</p>
+    <p class="about__p">Conceived as an abode of privacy, every decision here — from the ~200 ft tower-to-tower spacing to the 80% open space and the layered natural landscape by Singapore-based architects — is engineered around a single idea: a home that echoes your own pace, untouched by the world outside.</p>
+    <div class="about__stats">
+      <div class="astat"><span class="astat__num">ANP × Sunshine</span><span class="astat__cap">Developed By</span></div>
+      <div class="astat"><span class="astat__num">Baner, West Pune</span><span class="astat__cap">Established Corridor</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="partners">
+  <div class="container">
+    <p class="eyebrow">Partners</p>
+    <h2 class="section-title">We only work with the best.</h2>
+    <p class="section-sub">Engineered with master craftsmen and consultants adept in their respective fields — every detail of ANP Privado considered to perfection.</p>
+    <div class="partners__grid">
+      <div class="pt"><span class="pt__role">Landscape Consultant</span><span class="pt__name">Singapore-Based Architects</span></div>
+      <div class="pt"><span class="pt__role">Structure</span><span class="pt__name">Aluform · Earthquake-Resistant RCC</span></div>
+      <div class="pt"><span class="pt__role">Plumbing &amp; Fittings</span><span class="pt__name">Geberit · Hansgrohe · Duravit</span></div>
+      <div class="pt"><span class="pt__role">Developed By</span><span class="pt__name">ANP × Sunshine</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RERA ============ -->
+<section class="rera">
+  <div class="container">
+    <p class="eyebrow">MahaRERA Registered</p>
+    <h3 class="rera__title">Verified by the Maharashtra Real Estate Regulatory Authority.</h3>
+    <p class="rera__num">Project MahaRERA Registration Number: <strong>PR1260002500840</strong> — available at <a href="https://maharera.maharashtra.gov.in" target="_blank" rel="noopener">maharera.maharashtra.gov.in</a> under registered projects.</p>
+    <p class="rera__entity">ANP × Sunshine · ANP Privado, Sr. No. 16, Pan Card Club Road, Baner, Pune 411045.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title">Answered.</h2>
+    <div class="faq__list">
+      <details class="faq__item"><summary>When is ANP Privado launching?<span>+</span></summary><div class="faq__a">Show flats are ready and bookings are open. Pre-registered buyers receive priority allocation, launch-phase pricing, and first access to the most-favoured towers and corner residences before the wider release.</div></details>
+
+      <details class="faq__item"><summary>Where is the project located?<span>+</span></summary><div class="faq__a">ANP Privado, Sr. No. 16, Pan Card Club Road, Baner, Pune 411045 — Pune's western corridor. Approximately 5 minutes from Balewadi IT Park and Manipal Hospital, 7 minutes from Balewadi High Street, and well connected to the Mumbai–Bangalore Highway.</div></details>
+
+      <details class="faq__item"><summary>What residence types are available?<span>+</span></summary><div class="faq__a">All-corner 3 &amp; 4 BHK residences. 3 BHK carpet areas of 1309, 1489 and 1276 sqft; 4 BHK carpet areas of 1855, 2306 and 2228 sqft; plus a signature 4 BHK of 3000 sqft carpet (4200 sqft saleable) in Tower 1. Every bedroom has an en-suite washroom, with a powder room in every home.</div></details>
+
+      <details class="faq__item"><summary>What amenities does the project offer?<span>+</span></summary><div class="faq__a">65+ curated amenities across a 50,000 sq.ft grand clubhouse and a layered podium landscape — an all-season temperature-controlled pool, a 105 m lazy river, vitality pool, private luxe theatre, regal banquet, champion's arena (badminton, squash, cricket simulator), elite fitness studio, Miyawaki greenwoods, canopy walks and a private skydeck.</div></details>
+
+      <details class="faq__item"><summary>What are the specifications?<span>+</span></summary><div class="faq__a">A-class earthquake-resistant RCC with Aluform technology, 3400 mm floor-to-floor height, hand-picked imported marble flooring, Geberit concealed plumbing, Hansgrohe CP fittings, Duravit ceramic ware, centralised heat-pump hot water, VRV provision, IoT power monitoring and a MyGate-based security ecosystem with video door phone and CCTV.</div></details>
+
+      <details class="faq__item"><summary>Who is the developer?<span>+</span></summary><div class="faq__a">ANP Privado is a project by ANP in association with Sunshine Developers, an established name in Baner's western corridor with addresses including ANP One and ANP THINQ. Landscaping is led by Singapore-based architects.</div></details>
+
+      <details class="faq__item"><summary>What is the project composition?<span>+</span></summary><div class="faq__a">A 10-acre, low-density township of 9 towers (Towers 1–8 at G+33 and Tower 9 at G+34), with 80% open space, a ~200 ft tower-to-tower gap and all-corner apartments framed by Pashan Hill.</div></details>
+
+      <details class="faq__item"><summary>How do I book a site visit?<span>+</span></summary><div class="faq__a">Site visits are by appointment. Message us on WhatsApp at +91 88570 90799 and our team will arrange a private visit to the ready show flat at your preferred time.</div></details>
+
+      <details class="faq__item"><summary>Is ANP Privado a good investment?<span>+</span></summary><div class="faq__a">Baner is among West Pune's most established residential micro-markets, with strong rental demand and proximity to Balewadi IT Park, Hinjewadi and the Mumbai–Bangalore Highway. Low-density, all-corner inventory on a 10-acre parcel is rare in this corridor, and early entry offers the strongest point in the project's pricing lifecycle.</div></details>
+    </div>
+    <div class="center-cta"><a class="btn btn--gold" href="https://wa.me/918857090799?text=I%20have%20more%20questions%20about%20ANP%20Privado">Talk to the Concierge &rarr;</a></div>
+  </div>
+</section>
+
+<!-- ============ LEAD FORM ============ -->
+<section class="enquire" id="enquire">
+  <div class="container">
+    <p class="eyebrow">Priority Allocation · Show Flat Ready</p>
+    <h2 class="section-title">Reserve your <em>abode of privacy.</em></h2>
+    <p class="section-sub">Pre-registered patrons receive first access to signature inventory, launch-phase pricing and the most-favoured corner residences — before the public release.</p>
+    <form class="enquire__form" id="leadForm" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="mobile">Mobile Number (+91)</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" autocomplete="tel" inputmode="numeric" maxlength="10" required />
+      </div>
+      <button type="submit" class="btn btn--gold btn--full">Get Priority Allocation &rarr;</button>
+      <p class="enquire__safe">Your details are safe with us.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">Privado<span style="color: var(--color-gold);">.</span></div>
-      <p class="footer-tag">"An Abode of Privacy. Where every balcony breathes two-hundred feet apart."</p>
-      <p class="footer-rera">MahaRERA No.: PR1260002500840<br>maharera.maharashtra.gov.in</p>
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo"><span>ANP</span> PRIVADO</div>
+      <p class="footer__tag">An Abode of Privacy</p>
+      <p class="footer__about">A 10-acre, low-density address on Pan Card Club Road, Baner — 9 towers, 80% open space, all-corner 3 &amp; 4 BHK residences, a 50,000 sq.ft clubhouse and 65+ amenities. A project by ANP × Sunshine.</p>
+      <p class="footer__cp">Marketed by PROPBILLION · Authorised Channel Partner</p>
     </div>
-    <div>
-      <h5>Project</h5>
+    <div class="footer__col">
+      <h5>Contact</h5>
       <ul>
-        <li><a href="#story">Philosophy</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#amenities">Amenities</a></li>
-        <li><a href="#floorplans">Residences</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="tel:+918208749700">Call: +91 82087 49700</a></li>
+        <li><a href="https://wa.me/918857090799">WhatsApp: +91 88570 90799</a></li>
+        <li><a href="mailto:propbillionpune@gmail.com">propbillionpune@gmail.com</a></li>
+        <li>Pan Card Club Road, Baner, Pune 411045</li>
       </ul>
     </div>
-    <div>
-      <h5>Connect</h5>
+    <div class="footer__col">
+      <h5>Compliance</h5>
       <ul>
-        <li><a href="https://wa.me/918857090799" target="_blank" rel="noopener">WhatsApp · +91 8857090799</a></li>
-        <li><a href="tel:+918857090799">Call Sales Team</a></li>
-        <li>Site: Sr. No. 16, Pan Card Club Road, Baner, Pune</li>
-        <li>Show Flat Open · Daily 10:00 — 19:00</li>
+        <li>MahaRERA: PR1260002500840</li>
+        <li>Agent: A52100058176</li>
+        <li>Show Flat Ready · 2026</li>
+        <li><a href="#" data-privacy>Privacy Policy</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div>© ANP Corp · Sunshine Developers. All visuals are artist's impressions.</div>
-    <div>This is not a legal document. Plans subject to change.</div>
+  <div class="container">
+    <p class="footer__disclaimer">Disclaimer: The images, plans and other details herein are only indicative and conceptual, and are subject to change at the sole discretion of the developer. Artist's impressions are used to illustrate amenities, specifications and other details. A tolerance of +/- 3% is possible in unit areas on account of design and construction variances. All brands stated are subject to the final decision of the project architect. This electronic material does not constitute an offer and/or contract of any type between the promoter and the recipient. No booking or allotment shall be deemed to have been made on the basis of this material. You are required to independently verify all details — including area, amenities, services, terms of sale and payment — with the promoter's sales team by physically visiting the project site and the authorised MahaRERA website. PROPBILLION is an authorised channel partner; all transactions are governed by the agreement for sale executed with the promoter. Prices are exclusive of applicable taxes. *Terms &amp; Conditions Apply.</p>
+    <p class="footer__copy">© 2026 PROPBILLION. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- ================================================
-     FLOATING WHATSAPP
-     ================================================ -->
-<a href="https://wa.me/918857090799?text=Hi%2C%20I'd%20like%20more%20information%20about%20ANP%20Privado%2C%20Baner." 
-   target="_blank" rel="noopener" 
-   class="float-whatsapp" 
-   aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<!-- ============ PRIVACY MODAL ============ -->
+<div class="modal" id="privacyModal" hidden>
+  <div class="modal__box">
+    <button class="modal__close" data-close aria-label="Close">×</button>
+    <p class="eyebrow">ANP · PRIVADO</p>
+    <h2 class="modal__title">Privacy Policy</h2>
+    <p>PROPBILLION ("we", "us", "our") is an authorised channel partner marketing ANP Privado, Baner. This policy explains how we collect, use and protect your information when you interact with this page.</p>
+    <h3>Information We Collect</h3>
+    <p>When you submit an enquiry, request a brochure, or contact us via WhatsApp or phone, we collect your name, mobile number and any details you voluntarily share, along with non-personal browsing data through analytics tools.</p>
+    <h3>How We Use Your Information</h3>
+    <p>Your details are used solely to respond to your enquiry, share project information such as pricing, floor plans and availability, schedule site visits, and keep you informed about ANP Privado. We do not sell your data to third parties.</p>
+    <h3>Sharing of Information</h3>
+    <p>Your information may be shared with the project developer and our authorised sales team strictly to process your enquiry. We do not share your data for unrelated marketing.</p>
+    <h3>WhatsApp &amp; Communication</h3>
+    <p>By contacting us via WhatsApp or submitting your number, you consent to receive project-related communication from us through call, SMS or WhatsApp.</p>
+    <h3>Data Security &amp; Your Rights</h3>
+    <p>We take reasonable measures to protect your information, though no electronic transmission is fully secure. You may request access to, correction of, or deletion of your data at any time using the contact details below.</p>
+    <h3>Contact</h3>
+    <p>Phone: +91 82087 49700 · WhatsApp: +91 88570 90799 · Email: propbillionpune@gmail.com</p>
+    <p class="modal__fine">PROPBILLION · Authorised Channel Partner · MahaRERA Agent No. A52100058176. This page is marketing material and does not constitute a legal offer. All transactions are governed by the agreement for sale executed with the promoter.</p>
+  </div>
+</div>
 
-<!-- ================================================
-     SCRIPTS
-     ================================================ -->
-<script>
-// Mark body as JS-enabled (controls reveal animations)
-document.body.classList.add('js-enabled');
+<!-- ============ STICKY MOBILE BAR ============ -->
+<div class="sticky-bar">
+  <a href="tel:+918208749700"><span>Call</span></a>
+  <a href="https://wa.me/918857090799"><span>WhatsApp</span></a>
+  <a href="https://wa.me/918857090799?text=Send%20me%20ANP%20Privado%20pricing"><span>Get Price</span></a>
+  <a href="https://wa.me/918857090799?text=I%20want%20to%20book%20an%20ANP%20Privado%20site%20visit"><span>Site Visit</span></a>
+</div>
 
-// =============== STICKY NAV ON SCROLL ===============
-const nav = document.getElementById('nav');
-const heroSection = document.querySelector('.hero');
-
-function handleNavScroll() {
-  const heroHeight = heroSection.offsetHeight;
-  const scrollY = window.scrollY;
-
-  if (scrollY > heroHeight - 100) {
-    nav.classList.remove('hero-mode');
-    nav.classList.add('scrolled');
-  } else if (scrollY > 60) {
-    nav.classList.add('hero-mode', 'scrolled');
-  } else {
-    nav.classList.add('hero-mode');
-    nav.classList.remove('scrolled');
-  }
-}
-window.addEventListener('scroll', handleNavScroll, { passive: true });
-handleNavScroll();
-
-// =============== INTERSECTION REVEAL ===============
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
-
-reveals.forEach(el => revealObserver.observe(el));
-
-// =============== GSAP SCROLL ANIMATIONS ===============
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Parallax on hero media
-  gsap.to('.hero-media', {
-    yPercent: 25,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  // Animated stat counters
-  document.querySelectorAll('.stat-num[data-count]').forEach(el => {
-    const target = parseInt(el.getAttribute('data-count'), 10);
-    const unitEl = el.querySelector('.unit');
-    const unitHTML = unitEl ? unitEl.outerHTML : '';
-
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 85%',
-      onEnter: () => {
-        const obj = { val: 0 };
-        gsap.to(obj, {
-          val: target,
-          duration: 1.8,
-          ease: 'power2.out',
-          onUpdate: () => {
-            const display = target === 50 ? Math.floor(obj.val) + 'K' : Math.floor(obj.val);
-            el.innerHTML = display + unitHTML;
-          }
-        });
-      },
-      once: true
-    });
-  });
-}
-
-// =============== SMOOTH SCROLL (anchor offset) ===============
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const targetId = link.getAttribute('href');
-    if (targetId === '#') return;
-    const target = document.querySelector(targetId);
-    if (target) {
-      e.preventDefault();
-      const offset = target.getBoundingClientRect().top + window.scrollY - 60;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
-    }
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
