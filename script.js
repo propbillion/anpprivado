@@ -1,92 +1,103 @@
-// Mark body as JS-enabled (controls reveal animations)
-document.body.classList.add('js-enabled');
+/* ============================================================
+   ANP PRIVADO — interactions
+   ============================================================ */
+(function () {
+  "use strict";
 
-// =============== STICKY NAV ON SCROLL ===============
-const nav = document.getElementById('nav');
-const heroSection = document.querySelector('.hero');
+  /* ---------- WhatsApp number for the lead form ---------- */
+  var WA_NUMBER = "918857090799";
 
-function handleNavScroll() {
-  const heroHeight = heroSection.offsetHeight;
-  const scrollY = window.scrollY;
+  /* ---------- NAV: hide on scroll down, show on up ---------- */
+  var nav = document.getElementById("nav");
+  var lastY = window.scrollY;
+  window.addEventListener("scroll", function () {
+    var y = window.scrollY;
+    if (y > 80) nav.classList.add("is-scrolled");
+    else nav.classList.remove("is-scrolled");
 
-  if (scrollY > heroHeight - 100) {
-    nav.classList.remove('hero-mode');
-    nav.classList.add('scrolled');
-  } else if (scrollY > 60) {
-    nav.classList.add('hero-mode', 'scrolled');
-  } else {
-    nav.classList.add('hero-mode');
-    nav.classList.remove('scrolled');
-  }
-}
-window.addEventListener('scroll', handleNavScroll, { passive: true });
-handleNavScroll();
+    if (y > lastY && y > 300) nav.classList.add("is-hidden");
+    else nav.classList.remove("is-hidden");
+    lastY = y;
+  }, { passive: true });
 
-// =============== INTERSECTION REVEAL ===============
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
-
-reveals.forEach(el => revealObserver.observe(el));
-
-// =============== GSAP SCROLL ANIMATIONS ===============
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Parallax on hero media
-  gsap.to('.hero-media', {
-    yPercent: 25,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
-
-  // Animated stat counters
-  document.querySelectorAll('.stat-num[data-count]').forEach(el => {
-    const target = parseInt(el.getAttribute('data-count'), 10);
-    const unitEl = el.querySelector('.unit');
-    const unitHTML = unitEl ? unitEl.outerHTML : '';
-
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 85%',
-      onEnter: () => {
-        const obj = { val: 0 };
-        gsap.to(obj, {
-          val: target,
-          duration: 1.8,
-          ease: 'power2.out',
-          onUpdate: () => {
-            const display = target === 50 ? Math.floor(obj.val) + 'K' : Math.floor(obj.val);
-            el.innerHTML = display + unitHTML;
-          }
+  /* ---------- FAQ: keep only one open at a time ---------- */
+  var faqs = document.querySelectorAll(".faq__item");
+  faqs.forEach(function (item) {
+    item.addEventListener("toggle", function () {
+      if (item.open) {
+        faqs.forEach(function (other) {
+          if (other !== item) other.open = false;
         });
-      },
-      once: true
+      }
     });
   });
-}
 
-// =============== SMOOTH SCROLL (anchor offset) ===============
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const targetId = link.getAttribute('href');
-    if (targetId === '#') return;
-    const target = document.querySelector(targetId);
-    if (target) {
+  /* ---------- PRIVACY MODAL ---------- */
+  var modal = document.getElementById("privacyModal");
+  var openBtn = document.querySelector("[data-privacy]");
+  var closeBtn = modal ? modal.querySelector("[data-close]") : null;
+
+  function openModal(e) { if (e) e.preventDefault(); modal.hidden = false; document.body.style.overflow = "hidden"; }
+  function closeModal() { modal.hidden = true; document.body.style.overflow = ""; }
+
+  if (openBtn) openBtn.addEventListener("click", openModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && modal && !modal.hidden) closeModal(); });
+
+  /* ---------- LEAD FORM -> WhatsApp ---------- */
+  var form = document.getElementById("leadForm");
+  if (form) {
+    var nameInput = document.getElementById("name");
+    var mobileInput = document.getElementById("mobile");
+
+    mobileInput.addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, "").slice(0, 10);
+    });
+
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-      const offset = target.getBoundingClientRect().top + window.scrollY - 60;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
-    }
-  });
-});
+      var ok = true;
+      var name = nameInput.value.trim();
+      var mobile = mobileInput.value.trim();
+
+      if (name.length < 2) { nameInput.classList.add("is-error"); ok = false; }
+      else nameInput.classList.remove("is-error");
+
+      if (!/^[6-9]\d{9}$/.test(mobile)) { mobileInput.classList.add("is-error"); ok = false; }
+      else mobileInput.classList.remove("is-error");
+
+      if (!ok) return;
+
+      var msg =
+        "Hi, I'm interested in ANP Privado, Baner.\n" +
+        "Name: " + name + "\n" +
+        "Mobile: +91 " + mobile + "\n" +
+        "Please share pricing, floor plans and priority allocation details.";
+
+      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+    });
+  }
+
+  /* ---------- REVEAL ON SCROLL ---------- */
+  var revealTargets = document.querySelectorAll(
+    ".section-title, .section-sub, .pcard, .plan, .bp, .ff, .stat, .conn, .pt, .faq__item, .band__content, .feature__img, .about__p"
+  );
+  revealTargets.forEach(function (el) { el.classList.add("reveal"); });
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry, i) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = (Array.prototype.indexOf.call(el.parentNode.children, el) % 6) * 70;
+          setTimeout(function () { el.classList.add("is-in"); }, delay);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    revealTargets.forEach(function (el) { io.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add("is-in"); });
+  }
+})();
