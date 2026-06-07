@@ -48,6 +48,21 @@
   gtag('js', new Date());
   gtag('config', 'AW-17833027272');
 </script>
+  <!-- ANP Privado WhatsApp Conversion -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17833027272/6BjdC0Cvw7ocEMjNubdC',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 </head>
 <body>
 
